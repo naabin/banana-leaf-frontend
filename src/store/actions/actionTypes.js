@@ -1,0 +1,31 @@
+export const GET_MAINS = "GET_MAINS";
+export const MAINS_LOADING= "MAINS_LOADING";
+export const MAINS_FAILED = "MAINS_FAILED";
+
+export const GET_ENTREES = "GET_ENTREES";
+export const ENTREES_LOADING = "ENTREES_LOADING";
+export const ENTREES_FAILED = "ENTREES_FAILED";
+
+export const GET_DESSERTS = "GET_DESSERTS";
+export const DESSERTS_LOADING = "DESSERTS_LOADING";
+export const DESSERTS_FAILED = "DESSERTS_FAILED";
+
+export const GET_SIDES = "GET_SIDES";
+export const SIDES_LOADING = "SIDES_LOADING";
+export const SIDES_FAILED = "SIDES_FAILED";
+
+export const GET_IMAGES = "GET_IMAGES";
+export const IMAGES_LOADING = "IMAGES_LOADING";
+export const IMAGES_FAILED = "IMAGES_FAILED";
+
+
+export const SHOW_MODAL = "SHOW_MODAL";
+export const HIDE_MODAL = "HIDE_MODAL";
+
+export const POST_BOOKING_LOADING = "POST_BOOKING_LOADING";
+export const GET_POST_RESPONSE = "GET_POST_RESPONSE";
+export const POST_FAILED = "POST_FAILED";
+
+
+
+

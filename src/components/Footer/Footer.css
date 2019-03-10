@@ -1,0 +1,19 @@
+#footer {
+    
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    
+}
+#table {
+    color: white;
+    margin-right: 10%;
+    padding: 20%;
+    text-align: center;
+}
+
+@media (max-width: 499px) {
+    #table{
+        padding: 20%;
+    }
+}

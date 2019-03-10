@@ -1,0 +1,75 @@
+#Gallery {
+    background: linear-gradient(25deg,white, white);
+    padding: 1.2em;
+    width: 100%;
+    height: 100%;
+
+}
+#image-text{
+    position: absolute; 
+    cursor: pointer;
+    color: white; 
+    top: 135px; 
+    width: 100%;
+    font: bold 24px/45px Helvetica, Sans-Serif; 
+    letter-spacing: -1px;  
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px; 
+}
+#cardImage {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+}
+.img-responsive {
+    max-width: 100%;
+    max-height: 100%;
+}
+ @media screen and (max-width: 991px) {
+    .img-responsive {
+        max-width: 30%;
+      }
+      #cardImage {
+          height: 100px;
+      }
+      #image-text {
+          top: 65px;
+          font: bold 15px/15px Helvetica, Sans-Serif;
+          
+      }
+}
+
+@media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+    /* Adding a fixed/percentage min-width could ensure that the image doesn't get too small */
+    .img-responsive {
+      max-width: 30%;
+    }
+    #cardImage {
+        height: 100px;
+    }
+    #image-text {
+        top: 65px;
+        font: bold 15px/15px Helvetica, Sans-Serif;
+        
+    }
+}
+
+ @media screen and (max-width: 479px) {
+    /* start of phone styles */
+    /* It's possible to hide the image if the screen becomes too small */
+    .img-responsive {
+        max-width: 30%;
+      }
+      #cardImage {
+          height: 100px;
+      }
+      #image-text {
+          top: 65px;
+          font: bold 15px/15px Helvetica, Sans-Serif;
+          
+      }
+} 

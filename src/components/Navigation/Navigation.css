@@ -1,0 +1,33 @@
+.navbar{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(100deg,rgb(33, 36, 75),#011b1d);
+    padding: 0;
+    margin: 0;
+}
+
+.img{
+    display: block;
+    width: 70px;
+    height: 50px;
+}
+#Link:hover{
+    border: 1px solid white;
+    background-color: #3c763d;
+    color: whitesmoke;
+    border-radius: 5px;
+    text-align: center;
+}
+#nav {
+    margin-left: 65%;
+    width: 100%;
+    float: right;
+}
+.dropdown {
+    padding-top: 0;
+}
+@media(max-width:  1260px) {
+    .dropdown {
+        padding-top: 25px;
+    }
+}
