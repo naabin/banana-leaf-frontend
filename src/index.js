@@ -7,14 +7,15 @@ import {applyMiddleware, compose, combineReducers, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom';
 
-import {images} from './store/reducers/images'
-import {entrees} from './store/reducers/entrees'
-import {mains} from './store/reducers/mains'
-import {desserts} from './store/reducers/desserts'
-import {sides} from './store/reducers/sides'
+import {images} from './store/reducers/images';
+import {entrees} from './store/reducers/entrees';
+import {mains} from './store/reducers/mains';
+import {desserts} from './store/reducers/desserts';
+import {sides} from './store/reducers/sides';
 import {reservation} from "./store/reducers/reservation";
+import {subs} from './store/reducers/subscribers';
 
 import './index.css';
 import App from './App';
@@ -34,7 +35,8 @@ const rootReducer = combineReducers({
     mains: mains,
     desserts: desserts,
     sides: sides,
-    booking: reservation
+    booking: reservation,
+    subs: subs
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));

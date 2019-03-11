@@ -5,7 +5,11 @@
     /*resize: both;*/
 }
 #foodItem {
-    padding: 1.2em;
+    padding: 1em;
+}
+p {
+    text-indent:1em;  
+    text-align:justify;
 }
 
 @media (max-width: 499px) {

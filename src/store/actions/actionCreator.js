@@ -265,3 +265,103 @@ export const fetchFields = (name, email, phone, date, time, num_of_guests, speci
         .then(response => dispatch(getPostRespone(response)))
         .catch(error => dispatch(postFailed(error)))
 };
+
+export const subscribeLoading = () => {
+    return{
+        type: _.SUBSCRIBE_LOADING
+    }
+}
+
+export const getSubscribeResponse = (res) => {
+    return {
+        type: _.GET_SUBSCRIBE_RESONSE,
+        payload: res
+    }
+}
+
+export const subscribeFailed = (err) => {
+    return {
+        type: _.SUBSCRIBE_FAILED,
+        payload: err
+    }
+}
+export const fetchSubscribe = (email) => dispatch => {
+    dispatch(subscribeLoading);
+    return fetch(basUrl + 'newsletter/', {
+        headers: {
+            'content-type': 'application/json',
+        },
+        method: 'POST',
+        body: JSON.stringify({
+            email_field: email
+        })
+    })
+    .then(res => {
+        if(res.ok) {
+            console.log(res);
+            return res;
+        }
+        else{
+            var error = new Error('Error' + res.status + ' : ' + res.statusText);
+            error.message = res;
+            throw error;
+        }
+    }, err => {
+        var error = new Error(err.message);
+        throw error;
+    })
+    .then(res => res.json())
+    .then(sub => dispatch(getSubscribeResponse(sub)))
+    .catch(error => dispatch(subscribeFailed(error.message)));
+}
+
+export const enquiryFormLoading = () => {
+    return {
+        type: _.ENQUIRY_LOADING
+    }
+}
+
+export const getEnquiryResponse = (msg) => {
+    return {
+        type: _.GET_ENQUIRY_RESPONSE,
+        payload:msg
+    }
+}
+export const enquiryFailed = (error) => {
+    return {
+        type: _.ENQUIRY_FAILED,
+        payload: error
+    }
+}
+
+export const fetchEnquiry = (name, email, phone, message) => dispatch => {
+    dispatch(enquiryFormLoading())
+    return fetch(basUrl + 'enquiry/',{
+        headers: {
+            'content-type': 'application/json',
+        },
+        method: 'POST',
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+        })
+    })
+    .then(res => {
+        if(res.ok){
+            return res;
+        }
+        else {
+            var error = new Error('Error ' + res.status + ' : ' + res.statusText);
+            error.message = res;
+            throw error.message;
+        }
+    },err => {
+        var error = new Error(err.message);
+        throw error;
+    })
+    .then(res => res.json())
+    .then(enquiry => dispatch(getEnquiryResponse(enquiry)))
+    .catch(error => dispatch(enquiryFailed(error.message)))
+}

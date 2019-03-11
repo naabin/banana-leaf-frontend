@@ -10,6 +10,8 @@ import './Landing.css'
 import * as _ from '../../store/actions/actionCreator'
 import Loading from "../Loading/Loading";
 import Reservation from "../Reservation/Reservation";
+import AboutUs from './AboutUs/AboutUs';
+import EnquiryForm from './EnquiryForm/EnquiryForm';
 
 
 class Landing extends Component {
@@ -52,55 +54,10 @@ class Landing extends Component {
                             </Card>
                         </div>
                         <div className='col-sm-12 col-md-4 nogap'>
-                            <div className='container bg-light'>
-                                <h3 className="text-center py-1">Enquiry</h3>
-                                <div className='row'>
-                                    <div className='col-sm-6 col-md-6'>
-                                        <label htmlFor="name">Name:</label>
-                                        <input className="form-control" type="text" id="name" placeholder="Name"></input>
-                                    </div>
-                                    <div className="col-sm-6 col-md-6">
-                                        <label htmlFor="email">Email:</label>
-                                        <input className='form-control' type="email" id="email" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-sm-6 col-md-8">
-                                        <label htmlFor="phone">Phone:</label>
-                                        <input className="form-control" type="text" id="phone" placeholder="Phone No."></input>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-sm-12 col-md-12">
-                                        <label htmlFor="mesaage">Message:</label>
-                                        <textarea cols="10" rows="8" id="message" className="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="mx-auto">
-                                        <input className="form-control btn btn-success m-2" type="submit" />
-                                    </div>
-                                </div>
-                            </div>
+                            <EnquiryForm/>
                         </div>
                         <div className='col-sm-12 col-md-12 nogap'>
-                            <div className='jumbotron text-center hoverable'>
-                                <div className='row'>
-                                    <div className="col-md-4 offset-md-1 mx-3 my-3">
-                                        <div className="view overlay">
-                                            <img src={require('../../assets/res.jpg')} className="img-fluid" alt="" />
-                                        </div>
-                                    </div>
-                                    <div className=" col-sm-12 col-md-6 text-md-left ml-3 mt-3">
-                                        <h4 className="h4 mb-4">We are making big announcements</h4>
-                                        <p className="font-weight-normal">
-                                            In this menu, you will be delighted with the selection of Sri Lankan offerings that have been tempered with the characteristics
-                                            of Indian, Arab, Malay, Moor, Portuguese, Dutch, and British influences
-                                        </p>
-                                        <button className='btn btn-success btn-sm'>Read More</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <AboutUs/>
                         </div>
                     </div>
 

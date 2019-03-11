@@ -11,13 +11,11 @@ class MenuItems extends Component {
                 <hr style={{ backgroundColor: 'white' }} />
                 {this.props.category && this.props.category.map((item, index) => {
                     return (
-                        <div key={item.pk} className={'row noGap'} id={'foodItem'}>
+                        <div key={item.pk} className={'row'} id={'foodItem'}>
                             <div className={'col-sm-6 col-md-10 '}>
-                                <h4>{item.name} <span><p className='float-right'>{item.price}</p></span></h4>
+                                <h4>{item.name} <p className='float-right'>{item.price}</p></h4>
+                                {item.description ?<p className='col-sm-12 col-md-9 noGap'>{item.description}</p> : null}
                             </div>
-                            {item.description ? <div className='col-sm-12 col-md-8'>
-                            <p>{item.description}</p>
-                            </div> : null}
                         </div>
                     )
                 })}
