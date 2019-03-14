@@ -6,27 +6,23 @@ import {Switch, Route} from 'react-router-dom';
 
 import * as _ from '../../store/actions/actionCreator'
 import './Menu.css'
-import MenuItems from "../Common/MenuItems/MenuItems";
+import LunchMenuItems from "../Common/MenuItems/LunchMenuItems";
 import Loading from '../Loading/Loading';
+import DinnerMenuItems from '../Common/MenuItems/DinnerMenuItems';
 
 class Menu extends Component {
     componentDidMount() {
-        this.props.fetchEntrees();
-        this.props.fetchMains();
-        this.props.fetchDesserts();
-        this.props.fetchSides();
+        this.props.fetchLunchMenu();
+        this.props.fetchDinnerMenu();
     }
-
     render() {
         return (
             <div className={'Menu'}>
                 <div className={'row'}>
                     <div className={'container'}>
                     <Switch>
-                        <Route path='/menu/entree' component={() => this.props.entrees.isLoading ? <Loading/> : <MenuItems headTitle={'Entrees'} category={this.props.entrees.entrees}/>}/>
-                        <Route path='/menu/mains' component={() => this.props.mains.isLoading ? <Loading/> : <MenuItems headTitle={'Mains'} category={this.props.mains.mains}  />}/>
-                        <Route path='/menu/desserts' component={() => this.props.desserts.isLoading ? <Loading/> :  <MenuItems headTitle={'Desserts'} category={this.props.desserts.desserts}/>}/>
-                        <Route path='/menu/sides' component={() => this.props.sides.isLoading ? <Loading/> :       <MenuItems headTitle={'Sides'} category={this.props.sides.sides}/>}/>
+                        <Route path='/menu/lunch' component={() => this.props.lunch && this.props.lunch.isLoading ? <Loading/> : <LunchMenuItems category={this.props.lunch && this.props.lunch.lunchMenu && this.props.lunch.lunchMenu[0]}/>}/>
+                        <Route path='/menu/dinner' component={() => this.props.dinner && this.props.dinner.isLoading ? <Loading/> : <DinnerMenuItems category={this.props.dinner && this.props.dinner.dinnerMenu && this.props.dinner.dinnerMenu[0]}  />}/>
                     </Switch>
                     </div>
                 </div>
@@ -37,18 +33,14 @@ class Menu extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        entrees: state.entrees,
-        mains: state.mains,
-        desserts: state.desserts,
-        sides: state.sides
+        lunch: state.lunch,
+        dinner: state.dinner
     }
 };
 const mapDispatchToProps = dispatch => {
     return {
-        fetchEntrees: () => dispatch(_.fetchEntrees()),
-        fetchMains: () => dispatch(_.fetchMains()),
-        fetchDesserts: () => dispatch(_.fetchDesserts()),
-        fetchSides: () => dispatch(_.fetchSides())
+        fetchDinnerMenu: () => dispatch(_.fetchDinnerMenu()),
+        fetchLunchMenu: () => dispatch(_.fetchLunchMenu())
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

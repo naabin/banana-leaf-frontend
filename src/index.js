@@ -10,12 +10,11 @@ import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 
 import {images} from './store/reducers/images';
-import {entrees} from './store/reducers/entrees';
-import {mains} from './store/reducers/mains';
-import {desserts} from './store/reducers/desserts';
-import {sides} from './store/reducers/sides';
+import {lunch} from './store/reducers/lunch'
+import {dinner} from './store/reducers/dinner'
 import {reservation} from "./store/reducers/reservation";
 import {subs} from './store/reducers/subscribers';
+import {enquiry} from './store/reducers/enquiry'
 
 import './index.css';
 import App from './App';
@@ -31,12 +30,11 @@ const composeEnhancers =
 
 const rootReducer = combineReducers({
     images: images,
-    entrees: entrees,
-    mains: mains,
-    desserts: desserts,
-    sides: sides,
+    lunch: lunch,
+    dinner: dinner,
     booking: reservation,
-    subs: subs
+    subs: subs,
+    enquiry: enquiry
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));

@@ -1,0 +1,16 @@
+#icon{
+    font-size: 100px;
+    padding-left: 180px;
+    color: green;
+    justify-content: center;
+}
+.nogap {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 499px) {
+    #icon {
+        padding-left: 110px;
+    }
+}

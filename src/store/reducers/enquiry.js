@@ -14,7 +14,7 @@ export const enquiry = (state=initialState, action) => {
         case _.GET_ENQUIRY_RESPONSE:
             return {...state, isLoading:false, message: action.payload}
         case _.ENQUIRY_FAILED:
-            return {...state, isLoading:false, message: action.payload}
+            return {...state, isLoading:false, error: action.payload}
         default:
             return state
     }

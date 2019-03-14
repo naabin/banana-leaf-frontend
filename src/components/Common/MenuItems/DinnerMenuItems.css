@@ -1,0 +1,24 @@
+#img{
+    display: block;
+    width: 90%;
+    height: 100px;
+    /*resize: both;*/
+}
+#foodItem {
+    padding: 1em;
+}
+p {
+    /* text-indent:1em;   */
+    /* text-align:justify; */
+}
+
+@media (max-width: 499px) {
+    #img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.noGap {
+    margin: 0 !important;
+    padding: 0 !important;
+}

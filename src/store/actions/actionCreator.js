@@ -40,167 +40,86 @@ export const fetchImages = () => dispatch => {
         .catch(error => dispatch(imageFailed(error)))
 };
 
-export const entreesLoading = () => {
+export const lunchRequestLoading = () => {
     return {
-        type: _.ENTREES_LOADING
+        type : _.LUNCH_LOADING
     }
-};
-export const getEntrees = (entrees) => {
+}
+
+export const getLunchResponse = (lunchMenu) => {
     return {
-        type: _.GET_ENTREES,
-        payload: entrees
+        type: _.GET_LUNCH,
+        payload: lunchMenu
     }
-};
-export const entreesFailed = (error) => {
+}
+
+export const lunchResponseFailed = (error) => {
     return {
-        type: _.ENTREES_FAILED,
+        type: _.LUCNH_FAILED,
         payload: error
     }
-};
-export const fetchEntrees = () => dispatch => {
-    dispatch(entreesLoading());
-    return fetch(basUrl + 'entree/')
-        .then(res => {
-            if (res.ok) {
-                return res;
-            }
-            else {
-                var error = new Error('Error' + res.status + ' : ' + res.statusText);
-                error.message = res;
-                throw error;
-            }
-        }, err => {
-            var error = new Error(err.message);
+}
+
+export const fetchLunchMenu = () => dispatch => {
+    dispatch(lunchRequestLoading());
+    return fetch(basUrl + 'lunch/')
+    .then(response => {
+        if(response.ok){
+            return response;
+        }
+        else {
+            var error = new Error('Error ' + response.status + ' : ' + response.statusText)
+            error.message = response;
             throw error;
-        })
-        .then(res => res.json())
-        .then(entrees => dispatch(getEntrees(entrees)))
-        .catch(error => dispatch(entreesFailed(error)))
-};
+        }
+    }, err => {
+        var error = new Error(err.message);
+        throw error;
+    })
+    .then(response => response.json())
+    .then(lunchMenu => dispatch(getLunchResponse(lunchMenu)))
+    .catch(error => dispatch(lunchResponseFailed(error)))
+}
 
-export const mainsLoading = () => {
+export const dinnerResponseLoading = () => {
     return {
-        type: _.MAINS_LOADING
+        type : _.DINNER_LOADING
     }
-};
+}
 
-export const getMains = (main) => {
+export const getDinnerResponse = (dinnerMenu) => {
     return {
-        type: _.GET_MAINS,
-        payload: main
+        type : _.GET_DINNER,
+        payload: dinnerMenu
     }
-};
-
-export const mainsFailed = (error) => {
+}
+export const dinnerResponseFailed = (error) => {
     return {
-        type: _.MAINS_FAILED,
+        type: _.DINNER_FAILED,
         payload: error
     }
-};
+}
 
-export const fetchMains = () => dispatch => {
-    dispatch(mainsLoading());
-    return fetch(basUrl + 'mains/')
-        .then(response => {
-            if (response.ok) {
-                return response
-            }
-            else {
-                var error = new Error('Error ' + response.status + ' : ' + response.statusText);
-                error.message = response;
-                throw error;
-            }
-        }, err => {
-            var error = new Error(err.message);
+export const fetchDinnerMenu = () => dispatch => {
+    dispatch(dinnerResponseLoading())
+    return fetch(basUrl + 'dinner/')
+    .then(response => {
+        if(response.ok){
+            return response;
+        }
+        else {
+            var error = new Error('Error ' + response.status + ' : ' + response.statusText)
+            error.message = response;
             throw error;
-        })
-        .then(response => response.json())
-        .then(mains => dispatch(getMains(mains)))
-        .catch(error => dispatch(mainsFailed(error)))
-};
-
-export const dessertsLoading = () => {
-    return {
-        type: _.DESSERTS_LOADING
-    }
-};
-
-export const getDesserts = (desserts) => {
-    return {
-        type: _.GET_DESSERTS,
-        payload: desserts
-    }
-};
-
-export const dessertsFailed = (error) => {
-    return {
-        type: _.DESSERTS_FAILED,
-        payload: error
-    }
-};
-
-export const fetchDesserts = () => dispatch => {
-    dispatch(dessertsLoading());
-    return fetch(basUrl + 'dessert/')
-        .then(response => {
-            if (response.ok) {
-                return response;
-            }
-            else {
-                var error = new Error('Error' + response.status + ' : ' + response.statusText);
-                error.message = response;
-                throw error;
-            }
-        }, err => {
-            var error = new Error(err.message);
-            throw error;
-        })
-        .then(response => response.json())
-        .then(desserts => dispatch(getDesserts(desserts)))
-        .catch(error => dispatch(dessertsFailed(error)))
-};
-
-
-export const sidesLoading = () => {
-    return {
-        type: _.SIDES_LOADING
-    }
-};
-
-export const getSides = (sides) => {
-    return {
-        type: _.GET_SIDES,
-        payload: sides
-    }
-};
-
-export const sidesFailed = (error) => {
-    return {
-        type: _.SIDES_FAILED,
-        payload: error
-    }
-};
-
-export const fetchSides = () => dispatch => {
-    dispatch(sidesLoading());
-    return fetch(basUrl + 'sides/')
-        .then(response => {
-            if (response.ok) {
-                return response;
-            }
-            else {
-                var error = new Error('Error' + response.status + ' : ' +  response.statusText);
-                error.message = response;
-                throw error;
-            }
-        }, err => {
-            var error = new Error(err.message);
-            throw error;
-        })
-        .then(response => response.json())
-        .then(sides => dispatch(getSides(sides)))
-        .catch(error => dispatch(sidesFailed(error)))
-};
+        }
+    }, err => {
+        var error = new Error(err.message);
+        throw error;
+    })
+    .then(response => response.json())
+    .then(dinnerMenu => dispatch(getDinnerResponse(dinnerMenu)))
+    .catch(error => dispatch(dinnerResponseFailed(error)))
+}
 
 export const showModal = () => {
     return {
@@ -363,5 +282,5 @@ export const fetchEnquiry = (name, email, phone, message) => dispatch => {
     })
     .then(res => res.json())
     .then(enquiry => dispatch(getEnquiryResponse(enquiry)))
-    .catch(error => dispatch(enquiryFailed(error.message)))
+    .catch(error => dispatch(enquiryFailed(error)))
 }

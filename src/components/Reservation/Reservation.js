@@ -11,6 +11,7 @@ import {Modal} from 'react-bootstrap'
 import './Reservation.css';
 import ReservationSummary from './ReservationSummary/ReservationSummary';
 import BookingConfirmation from './BookingConfirmation/BookingConfirmation';
+import OpeningHours from './OpeningHours/OpeningHours';
 
 
 class Reservation extends Component {
@@ -75,9 +76,10 @@ class Reservation extends Component {
         const maxTime = new Date()
         maxTime.setHours(20);
         const {step} = this.state;
+        let form = null;
         switch(step) {
             case 1:
-                return  <div>
+                return <div>
                 {this.props.modal.showModal &&
                 <Modal show={this.props.modal.showModal} onHide={() => this.props.hide()}>
                     <Modal.Header className={'bg-light'} closeButton>
@@ -199,6 +201,7 @@ class Reservation extends Component {
                     </form>
                 </Modal>
                 }
+                <OpeningHours showModal = {this.props.show}/>
             </div>  
             case 2 :
                 return <ReservationSummary 

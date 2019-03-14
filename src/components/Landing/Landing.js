@@ -25,14 +25,14 @@ class Landing extends Component {
     };
 
     render() {
-        const specialOfTheDay = this.props.mains && this.props.mains.mains && this.props.mains.mains.filter(item => {
+        const specialOfTheDay = this.props.dinner && this.props.dinner.dinnerMenu && this.props.dinner.dinnerMenu[0].mains.filter(item => {
             return item.is_special_ofd === true
         });
         let item = null;
-        if (this.props.mains.isLoading) {
+        if (this.props.dinner.isLoading) {
             item = <Loading />;
         }
-        else if (this.props.mains && specialOfTheDay) {
+        else if (this.props.dinner && specialOfTheDay) {
             item = specialOfTheDay.map(sp => {
                 return (
                     <div key={sp.pk} className='row'>
@@ -103,13 +103,13 @@ class Landing extends Component {
 
 const mapStateToProps = state => {
     return {
-        mains: state.mains,
+        dinner: state.dinner,
         modal: state.booking
     }
 };
 const mapDispatchToProps = dispatch => {
     return {
-        specialOFD: () => dispatch(_.fetchMains()),
+        specialOFD: () => dispatch(_.fetchDinnerMenu()),
         showModal: () => dispatch(_.showModal())
     }
 };

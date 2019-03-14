@@ -26,10 +26,8 @@ class Navigation extends Component{
                         <Dropdown id="collapsible-nav-dropdown">
                             <Dropdown.Toggle className='col-sm-12 text-white'  variant=''  id="Link"><i className='fa fa-book'></i> Menu</Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/entree' className='nav-link'>Entrees</NavLink>
-                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/mains' className='nav-link'>Mains</NavLink>
-                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/desserts' className='nav-link'>Desserts</NavLink>
-                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/sides' className='nav-link'>Sides</NavLink>
+                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/lunch' className='nav-link'>Lunch</NavLink>
+                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/dinner' className='nav-link'>Dinner</NavLink>
                                 <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/special' className='nav-link'>Festive Special</NavLink>
                             </Dropdown.Menu>
                         </Dropdown>
