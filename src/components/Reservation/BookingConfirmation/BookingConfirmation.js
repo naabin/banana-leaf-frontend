@@ -15,20 +15,21 @@ class  BookingConfirmation extends Component {
         })
     }
     render(){
-        let messsage = this.props.confirmation.message;
+        let message = this.props.confirmation.message;
+        console.log(message);
         let confirmation = null;
-        if (this.props.confirmation.message !== null) {
+        if (this.props.confirmation && this.props.confirmation.message) {
             confirmation = (
                 <Modal  show={this.state.show} onHide={this.toggleShow}>
                     <Modal.Header className="bg-success" closeButton>
                         <Modal.Title>
-                        <p className="text-white text-center">{messsage.message}</p>
+                        <p className="text-white text-center">{message.message}</p>
                         </Modal.Title>
                     </Modal.Header>
                 </Modal>
             )
         }
-        if (this.props.confirmation.error !== null) {
+        if (this.props.confirmation && this.props.confirmation.message === null) {
             confirmation = (
                 <Modal show={this.state.show} onHide={this.toggleShow}>
                     <Modal.Header className="bg-danger" closeButton>

@@ -19,7 +19,7 @@ class ReservationSummary extends Component {
                 <Modal show={this.state.show} onHide={() => this.toggleModal()}>
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            <h3 className='center'>Summary</h3>
+                            <h3 className='center'>Reservation details</h3>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body >

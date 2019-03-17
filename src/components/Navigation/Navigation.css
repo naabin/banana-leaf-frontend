@@ -8,8 +8,9 @@
 
 .img{
     display: block;
-    width: 70px;
-    height: 50px;
+    width: 60px;
+    height:57px;
+    border-radius: 50%;
 }
 #Link:hover{
     border: 1px solid white;

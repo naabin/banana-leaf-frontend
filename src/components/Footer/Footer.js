@@ -52,10 +52,10 @@ class Footer extends Component {
     
                     </div>
                     <div className={'col-sm-12 col-md-4 pl-2'}>
-                        <h4>Follow us on</h4>
-                        <button className={'btn btn-danger btn-lg m-2'}><i className={'fa fa-youtube'}></i></button>
-                        <button className={'btn btn-primary btn-lg  m-2'}><i className={'fa fa-facebook'}></i></button>
-                        <button className={'btn btn-danger btn-lg  m-2 '}><i className={'fa fa-instagram'}></i></button>
+                        <h3>Follow us on</h3> 
+                        <button onClick={() => window.open('https://www.tripadvisor.com.au/Restaurant_Review-g255057-d1082008-Reviews-Banana_Leaf-Canberra_Australian_Capital_Territory.html','_blank')}className={'btn btn-default bg-white btn-lg  m-2'}><i className="fa fa-tripadvisor fa-2x"></i></button>
+                        <button onClick={() => window.open('https://www.facebook.com/BananaLeafCanberra', '_blank')} className={'btn btn-primary btn-lg  m-2'}><i className={'fa fa-facebook-square fa-2x'}></i></button>
+                        <button onClick={() => window.open('https://www.instagram.com/bananaleaf.canberra/', '_blank')} className={'btn btn-danger btn-lg  m-2'}><i className={'fa fa-instagram fa-2x'}></i></button>
     
                     </div>
                     <div className="col-sm-12 col-md-4 mb-4">

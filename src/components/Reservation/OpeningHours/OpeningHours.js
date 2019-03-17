@@ -17,38 +17,38 @@ const OpeningHours = (props) => {
                     <tbody>
                         <tr>
                             <td>Monday</td>
-                            <td>closed</td>
-                            <td>6pm - till late</td>
+                            <td>CLOSED</td>
+                            <td>6pm - 9pm</td>
                         </tr>
                         <tr>
                             <td>Tuesday</td>
-                            <td>closed</td>
-                            <td>6pm - till late</td>
+                            <td>CLOSED</td>
+                            <td>6pm-9pm</td>
                         </tr>
                         <tr>
                             <td>Wednesday</td>
                             <td>12pm-2pm</td>
-                            <td>6pm-till late</td>
+                            <td>6pm-9pm</td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
                             <td>12pm-2pm</td>
-                            <td>6pm-till late</td>
+                            <td>6pm-9pm</td>
                         </tr>
                         <tr>
                             <td>Friday</td>
                             <td>12pm-2pm</td>
-                            <td>6pm-till late</td>
+                            <td>6pm-9pm</td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
                             <td>12pm-2pm</td>
-                            <td>6pm-till late</td>
+                            <td>6pm-9pm</td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td>closed</td>
-                            <td>closed</td>
+                            <td>CLOSED</td>
+                            <td>CLOSED</td>
                         </tr>
                     </tbody>
                 </table>

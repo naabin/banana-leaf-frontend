@@ -19,7 +19,7 @@ class Navigation extends Component{
         return (
             <Navbar onToggle={() => this.setExpanded()} expanded={this.state.expanded}  expand='xl' className="col-sm-12" sticky={this.props.show ? 'top ' : null} >
                 <Navbar.Brand><NavLink className={'nav-link'} id={'Link'} to='/'>
-                    <img src={require("../../assets/logo.jpg")}className={'img'} alt=""/></NavLink></Navbar.Brand>
+                    <img src={require("../../assets/logo.png")}className={'img'} alt=""/></NavLink></Navbar.Brand>
                 <Navbar.Toggle className='bg-white p-4 rounded-0 navbar-toggler'/>
                 <Navbar.Collapse>  
                     <Nav  className={'mr-auto'} id={'nav'}>  

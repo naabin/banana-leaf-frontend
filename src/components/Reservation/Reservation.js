@@ -11,7 +11,7 @@ import {Modal} from 'react-bootstrap'
 import './Reservation.css';
 import ReservationSummary from './ReservationSummary/ReservationSummary';
 import BookingConfirmation from './BookingConfirmation/BookingConfirmation';
-import OpeningHours from './OpeningHours/OpeningHours';
+// import OpeningHours from './OpeningHours/OpeningHours';
 
 
 class Reservation extends Component {
@@ -72,9 +72,9 @@ class Reservation extends Component {
     }
     render() {
         const minTime = new Date()
-        minTime.setHours(12);
+        minTime.setHours(11);
         const maxTime = new Date()
-        maxTime.setHours(20);
+        maxTime.setHours(19);
         const {step} = this.state;
         let form = null;
         switch(step) {
@@ -89,6 +89,8 @@ class Reservation extends Component {
                     </Modal.Header>
                     <form onSubmit={(e) => this.nextStep(e)} className={'form'}>
                         <Modal.Body>
+                            <p>*<i>Just a quick note that we might not be able to reply to emails during service, for immediate booking please contact the restaurant directly.</i>
+                                <a className='btn btn-default bg-dark text-white    ' href='tel:0261012713'>Call Restaurant</a> </p>
                             <div className={'row'}>
                                 <div className={'col-sm-12 col-md-6'}>
                                     <label htmlFor="name">Name:</label>
@@ -201,7 +203,6 @@ class Reservation extends Component {
                     </form>
                 </Modal>
                 }
-                <OpeningHours showModal = {this.props.show}/>
             </div>  
             case 2 :
                 return <ReservationSummary 
@@ -241,12 +242,10 @@ class Reservation extends Component {
                     )
                 }
                 else{
-                    // if(this.props.modal.message && this.props.modal.message.message){
                         return <BookingConfirmation 
                         goBack = {this.prevStep}
                         confirmation = {this.props.modal}
                     />
-                // }
                 }
                
             default:
@@ -259,9 +258,7 @@ class Reservation extends Component {
 
 const mapStateToProps = state => {
     return {
-        modal: state.booking,
-        // input: state.booking,
-
+        modal: state.booking,   
     }
 };
 const mapDispatchToProps = dispatch => {

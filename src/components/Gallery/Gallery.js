@@ -43,7 +43,7 @@ class Gallery extends Component {
                                             this.pkAndIsOpenHandler(index);
                                             this.props.show();
                                         }} id={'cardImage'} src={image.image} title={image.title} alt=""/>
-                                        <h3 id="image-text" className="text-center">{image.title}</h3>
+                                        {/* <h3 id="image-text" className="text-center">{image.title}</h3> */}
                                     </div>
                                 </div>
                                 {isOpen && <Lightbox

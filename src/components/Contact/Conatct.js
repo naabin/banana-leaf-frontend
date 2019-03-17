@@ -15,7 +15,7 @@ const Contact = props => {
                     <div className='card-body'> 
                         <p>Address: 17 Kennedy St Kingston, ACT 2604</p>
                         <p>Phone: +61 02 6101 2713</p>
-                        <p>Email: bananaleaf@email.com</p>
+                        <p>Email: teambananaleaf@gmail.com</p>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Carousel, Card } from 'react-bootstrap'
+// import { Carousel, Card } from 'react-bootstrap'
 
 
 import { connect } from 'react-redux'
@@ -8,10 +8,10 @@ import { connect } from 'react-redux'
 
 import './Landing.css'
 import * as _ from '../../store/actions/actionCreator'
-import Loading from "../Loading/Loading";
+// import Loading from "../Loading/Loading";
 import Reservation from "../Reservation/Reservation";
 import AboutUs from './AboutUs/AboutUs';
-import EnquiryForm from './EnquiryForm/EnquiryForm';
+// import EnquiryForm from './EnquiryForm/EnquiryForm';
 
 
 class Landing extends Component {
@@ -25,19 +25,19 @@ class Landing extends Component {
     };
 
     render() {
-        const specialOfTheDay = this.props.dinner && this.props.dinner.dinnerMenu && this.props.dinner.dinnerMenu[0].mains.filter(item => {
-            return item.is_special_ofd === true
-        });
+        // const specialOfTheDay = this.props.dinner && this.props.dinner.dinnerMenu && this.props.dinner.dinnerMenu[0].mains.filter(item => {
+        //     return item.is_special_ofd === true
+        // });
         let item = null;
-        if (this.props.dinner.isLoading) {
-            item = <Loading />;
-        }
-        else if (this.props.dinner && specialOfTheDay) {
-            item = specialOfTheDay.map(sp => {
-                return (
-                    <div key={sp.pk} className='row'>
-                        <div className='col-sm-12 col-md-8 nogap bg-light'>
-                            <Card>
+        // if (this.props.dinner.isLoading) {
+        //     item = <Loading />;
+        // }
+        // else if (this.props.dinner && specialOfTheDay) {
+        //     item = specialOfTheDay.map(sp => {
+        //         return (
+        //             <div key={sp.pk} className='row'>
+        //                 <div className='col-sm-12 col-md-8 nogap bg-light'>
+                            /* <Card>
                                 <Card.Header>
                                     <h4 className='text-center'>Special of the day</h4>
                                 </Card.Header>
@@ -51,30 +51,30 @@ class Landing extends Component {
                                         </Carousel.Item>
                                     ))}
                                 </Carousel>
-                            </Card>
-                        </div>
-                        <div className='col-sm-12 col-md-4 nogap'>
+                            </Card> */
+                        // </div>
+                        /* <div className='col-sm-12 col-md-4 nogap'>
                             <EnquiryForm/>
-                        </div>
-                        <div className='col-sm-12 col-md-12 nogap'>
+                        </div> */
+                     item =    <div className='col-sm-12 col-md-12 nogap'>
                             <AboutUs/>
                         </div>
-                    </div>
+                    // </div>
 
-                )
-            });
-        }
-        else {
-            item = <div className={'text-center'}>
-                <h1>Something went wrong. Sorry for the inconvenience.</h1>
-            </div>
-        }
+        //         )
+        //     });
+        // }
+        // else {
+        //     item = <div className={'text-center'}>
+        //         <h1>Something went wrong. Sorry for the inconvenience.</h1>
+        //     </div>
+        // }
         return (
             <>
                 <div className=''>
                     <div id={'welcome'} className={'col-sm-12  col-md-12 col-lg-12'}>
                         <h1> BANANA LEAF</h1>
-                        <h5>SRI LANKAN CUISINE IN CANBERRA</h5>
+                        <h5>SRI LANKAN CUISINE IN KINGSTON CANBERRA</h5>
                         <div id="buttons" className='btn-group-justified'>
                             <div className='col-sm-12 col-md-6 btn-group m-1'>
                                 <button onClick={(e) => this.showModal(e)} className={'btn btn-default bg-white btn-lg'}><i className="fa fa-check"></i> Book Now

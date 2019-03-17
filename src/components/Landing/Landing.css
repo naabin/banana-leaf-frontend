@@ -14,7 +14,8 @@ h1, h5 {
     /* text-orientation: sideways-right; */
     font-weight: 900;
     font-size: 2.3rem;
-    color-interpolation-filters: linearRGB;
+    text-align: center;
+    /* color-interpolation-filters: linearRGB; */
 }
 .carousel {
     background: rgba(0, 0, 0, 0.7);
