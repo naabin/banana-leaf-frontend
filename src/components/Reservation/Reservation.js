@@ -11,6 +11,8 @@ import {Modal} from 'react-bootstrap'
 import './Reservation.css';
 import ReservationSummary from './ReservationSummary/ReservationSummary';
 import BookingConfirmation from './BookingConfirmation/BookingConfirmation';
+
+// import EnqiryFrom from '../Landing/EnquiryForm/EnquiryForm'  
 // import OpeningHours from './OpeningHours/OpeningHours';
 
 
@@ -79,7 +81,7 @@ class Reservation extends Component {
         let form = null;
         switch(step) {
             case 1:
-                return <div>
+                form = <div>
                 {this.props.modal.showModal &&
                 <Modal show={this.props.modal.showModal} onHide={() => this.props.hide()}>
                     <Modal.Header className={'bg-light'} closeButton>
@@ -204,8 +206,9 @@ class Reservation extends Component {
                 </Modal>
                 }
             </div>  
+            break;
             case 2 :
-                return <ReservationSummary 
+                form = <ReservationSummary 
                             nextStep = {this.nextStep}
                             postResponse = {this.props.modal}
                             submit = {this.handleSubmit}
@@ -220,10 +223,10 @@ class Reservation extends Component {
                             next={this.nextStep} 
                             previous={this.prevStep} 
                         /> 
+                        break;
             case 3 :
                 if(this.props.modal.isLoading) {
-                    return(
-                        <ReservationSummary 
+                    form= <ReservationSummary 
                             isLoading = {this.props.modal.isLoading}
                             nextStep = {this.nextStep}
                             postResponse = {this.props.modal}
@@ -239,18 +242,27 @@ class Reservation extends Component {
                             next={this.nextStep} 
                             previous={this.prevStep} 
                         /> 
-                    )
+                    
                 }
                 else{
-                        return <BookingConfirmation 
+                        form =  <BookingConfirmation 
                         goBack = {this.prevStep}
                         confirmation = {this.props.modal}
                     />
                 }
+                break;
                
             default:
                 return null;
             }
+            return(
+                <>{form}
+                <div className='col-sm-12 col-md-12 p-4 d-flex justify-content-center'>
+                    <button onClick={(e) => this.props.show()} className={'btn btn-dark border-none  btn-lg'}><i className="fa fa-check"></i> Book a Table
+                    </button>
+                </div>
+                </>
+            )
 
     }
 }

@@ -41,7 +41,8 @@ class DinnerMenuItems extends Component {
                                 return (
                                     <div key={item.pk} className={'row'} id={'foodItem'}>
                                         <div className={'col-sm-12 col-md-10 noGap '}>
-                                            <h4>{item.name}<DieteryIcon
+                                            <h4>{item.name}{item.is_gluten_free || item.is_dairy_free || item.is_vegetarian ||item.is_vegan ? <br/> : null}
+                                                <DieteryIcon
                                                 glutenFree={item.is_gluten_free}
                                                 dairyFree={item.is_dairy_free}
                                                 vegetarian={item.is_vegetarian}
@@ -76,7 +77,7 @@ class DinnerMenuItems extends Component {
                                 return (
                                     <div key={item.pk} className={'row'} id={'foodItem'}>
                                         <div className={'col-sm-6 col-md-10 noGap '}>
-                                            <h4>{item.name}
+                                            <h4>{item.name}{item.is_gluten_free || item.is_dairy_free || item.is_vegetarian ||item.is_vegan ? <br/> : null}
                                                 <DieteryIcon
                                                     glutenFree={item.is_gluten_free}
                                                     dairyFree={item.is_dairy_free}
@@ -110,7 +111,7 @@ class DinnerMenuItems extends Component {
                                 return (
                                     <div key={item.pk} className={'row'} id={'foodItem'}>
                                         <div className={'col-sm-6 col-md-10 noGap '}>
-                                            <h4>{item.name}
+                                            <h4>{item.name}{item.is_gluten_free || item.is_dairy_free || item.is_vegetarian ||item.is_vegan ? <br/> : null}
                                                 <DieteryIcon
                                                     glutenFree={item.is_gluten_free}
                                                     dairyFree={item.is_dairy_free}

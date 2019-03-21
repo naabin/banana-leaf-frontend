@@ -15,7 +15,7 @@ class  AboutUs extends Component {
         const partialAboutUs = aboutUs.substr(0,224);
         const fullText = aboutUs.substr(224, aboutUs.length-1);
         return (
-            <div className='jumbotron text-center hoverable'>
+            <div className='jumbotron text-center'>
             <div className='row'>
                 <div className="col-md-4 offset-md-1 mx-3 my-3">
                     <div className="view overlay">
@@ -24,11 +24,11 @@ class  AboutUs extends Component {
                 </div>
                 <div className=" col-sm-12 col-md-6 text-md-left ml-3 mt-3">
                     <h4 className="h4 mb-4">A little about Sri Lanka and about us</h4>
-                    <p className="font-weight-normal">
+                    <p id='about' className="font-weight-normal">
                         {partialAboutUs}
                     </p>
                     <div>
-                        {this.state.more ? <p className='font-weight-normal'>{fullText}</p>:<button className='btn btn-success btn-sm' onClick={this.expandText}>Read More</button>}
+                        {this.state.more ? <p id='about' className='font-weight-normal'>{fullText}</p>:<button className='btn btn-success btn-sm' onClick={this.expandText}>Read More</button>}
                     </div>
                 </div>
             </div>

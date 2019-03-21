@@ -39,34 +39,32 @@ class Footer extends Component {
                 <hr style={{ backgroundColor: 'white' }} />
                 <div className={'row'}>
     
-                    <div className={'col-sm-12 col-md-4 pl-2'}>
-                        <h4>Address</h4>
-                        <p>17 Kennedy St Kingston <br />ACT  2604 </p>
+                    <div className={'col-sm-12 col-md-12 m-1'}>
+                        <h3 className="text-center">Address</h3>
+                        <p className="text-center">17 Kennedy St Kingston <br />ACT  2604 </p>
                         {<Map 
                               isMarkerShown
                               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZmJlI4KhNjcusIMptnE8E80nXGic2jpc"
                               loadingElement={<div style={{ height: `100%` }} />}
-                              containerElement={<div style={{ height: `200px`, width: `300px` }} />}
+                              containerElement={<div style={{display:'block', height: `300px`, width: `100%` }} />}
                               mapElement={<div style={{ height: `100%` }} />}
                         />}
     
                     </div>
-                    <div className={'col-sm-12 col-md-4 pl-2'}>
-                        <h3>Follow us on</h3> 
-                        <button onClick={() => window.open('https://www.tripadvisor.com.au/Restaurant_Review-g255057-d1082008-Reviews-Banana_Leaf-Canberra_Australian_Capital_Territory.html','_blank')}className={'btn btn-default bg-white btn-lg  m-2'}><i className="fa fa-tripadvisor fa-2x"></i></button>
-                        <button onClick={() => window.open('https://www.facebook.com/BananaLeafCanberra', '_blank')} className={'btn btn-primary btn-lg  m-2'}><i className={'fa fa-facebook-square fa-2x'}></i></button>
-                        <button onClick={() => window.open('https://www.instagram.com/bananaleaf.canberra/', '_blank')} className={'btn btn-danger btn-lg  m-2'}><i className={'fa fa-instagram fa-2x'}></i></button>
-    
                     </div>
-                    <div className="col-sm-12 col-md-4 mb-4">
-                        <h3>Subscribe for newsletter</h3>
+                    <div className='row'>
+                    {/* <div className="col-sm-12 col-md-6 mb-4 m-1">
+                        <h3 className='text-center' >Subscribe for newsletter</h3>
                         <form  className='form-inline'>
-                            <input value={this.state.email} name='email' onChange={(e) => this.handleChange(e)} className="form-control form-control-sm mr-3 w-75" placeholder="Email" type="text" />
+                            <input disabled value={this.state.email} name='email' onChange={(e) => this.handleChange(e)} className="form-control form-control-sm mr-3 w-75" placeholder="Email" type="text" />
                             <div className="input-group-append">
-                                <button onClick={(e) => this.handleSubmit(e)} className="btn btn-warning btn-sm m-1 btn-outline-white mx-auto" type="button">Sign up</button>
+                                <button disabled onClick={(e) => this.handleSubmit(e)} className="btn btn-warning btn-sm m-1 btn-outline-white mx-auto" type="button">Sign up</button>
                             </div>
                         </form>
+                    </div> */}
                     </div>
+                <div className='col-sm-12 col-md-12'>
+                    <p className='text-center'>	&copy; 2019 Banana Leaf Restaurant</p>
                 </div>
             </footer>
 
