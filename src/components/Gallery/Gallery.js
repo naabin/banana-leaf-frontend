@@ -11,7 +11,7 @@ import Lightbox from 'react-image-lightbox'
 
 class Gallery extends Component {
     state = {
-        pk: 0,
+        photoIndex: 0,
         isOpen: false
     };
 
