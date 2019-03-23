@@ -75,6 +75,13 @@ h1, h5 {
 #buttons {
     padding-left: 22%;
 }
+@media (max-width: 320px) {
+    h1, h5{
+        font-size: 1rem;
+        padding: 0;
+    }
+    
+}
 
 @media (max-width:499px) {
     #about {
@@ -91,18 +98,40 @@ h1, h5 {
         padding-left: 0;
     }
 }
-@media (max-width: 765px) {
+@media (min-width:501px) {
+    #about {
+        display: none;
+    }
     h1, h5{
         font-size: 1.2rem;
         padding: 0;
     }
+    #welcome {
+        padding: 210px 0 210px 0;
+    }
+    #buttons {
+        padding-left: 0;
+    }
 }
-@media (max-width: 320px) {
+@media (min-width:768px) {
+    #about {
+        display: none;
+    }
     h1, h5{
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding: 0;
     }
-    
+    #welcome {
+        padding: 210px 0 210px 0;
+    }
+    #buttons {
+        padding-left: 32%;
+    }
+}
+@media(min-width: 1064px) {
+    #buttons {
+        padding-left: 23%;
+    }
 }
 #sideNav button {
     position: absolute;
@@ -119,13 +148,13 @@ h1, h5 {
     left: 0;
   }
 #tripAdvisor {
-    top: 800px;
+    top: 590px;
 }
 #facebook {
-    top: 870px;
+    top: 660px;
 }
 #instagram {
-    top: 940px;
+    top: 730px;
 }
 @media(max-width:375px){
     #sideNav button:hover {

@@ -9,6 +9,8 @@ import './Menu.css'
 import LunchMenuItems from "../Common/MenuItems/LunchMenuItems";
 import Loading from '../Loading/Loading';
 import DinnerMenuItems from '../Common/MenuItems/DinnerMenuItems';
+import Beverage from '../Common/MenuItems/Beverage/Beverage';
+import Festive from '../Common/MenuItems/Festive/Festive';
 
 class Menu extends Component {
     componentDidMount() {
@@ -23,6 +25,8 @@ class Menu extends Component {
                     <Switch>
                         <Route path='/menu/lunch' component={() => this.props.lunch && this.props.lunch.isLoading ? <Loading/> : <LunchMenuItems category={this.props.lunch && this.props.lunch.lunchMenu && this.props.lunch.lunchMenu[0]}/>}/>
                         <Route path='/menu/dinner' component={() => this.props.dinner && this.props.dinner.isLoading ? <Loading/> : <DinnerMenuItems category={this.props.dinner && this.props.dinner.dinnerMenu && this.props.dinner.dinnerMenu[0]}  />}/>
+                        <Route path='/menu/beverage' component={() =><Beverage/>}/>
+                        <Route path='/menu/festive' component={()=><Festive/>}/>
                     </Switch>
                     </div>
                 </div>

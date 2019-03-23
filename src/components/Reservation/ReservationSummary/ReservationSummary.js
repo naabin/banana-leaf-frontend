@@ -13,6 +13,7 @@ class ReservationSummary extends Component {
         this.props.hideModal();
     }
     render(){
+        console.log(this.props.date);
         return(
             <div>
                 <form>

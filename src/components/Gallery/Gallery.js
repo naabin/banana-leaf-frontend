@@ -33,25 +33,25 @@ class Gallery extends Component {
             cardImage = <Loading/>;
         } else {
             cardImage = (
-                <div className={'row'}>
+                <div className={'row d-flex d-flex justify-content-center'}>
                     {images.map((image, index) => {
                         return (
-                            <div key={image.pk} className='col-sm-6 col-md-2 m-1  p-0 img-responsive'>
+                            <div key={image.pk} className='col-sm-6 col-md-2 col-lg-2 m-1 p-0 img-responsive'>
                                 <div>                
                                     <div>
-                                        <img onClick={() => {
+                                       {this.props.images.isLoading ? <Loading/> : <img onClick={() => {
                                             this.pkAndIsOpenHandler(index);
                                             this.props.show();
-                                        }} id={'cardImage'} src={image.image} title={image.title} alt=""/>
+                                        }} id={'cardImage'} src={image.image} title={image.title} alt=""/>}
                                         {/* <h3 id="image-text" className="text-center">{image.title}</h3> */}
                                     </div>
                                 </div>
                                 {isOpen && <Lightbox
-                                    mainSrc={images[photoIndex].image}
+                                    mainSrc={this.props.images.isLoading ? <Loading/> :images[photoIndex].image}
                                     imagePadding ={50}
-                                    nextSrc={images[(photoIndex + 1) % images.length].image}
-                                    imageCaption={images[photoIndex].title}
-                                    prevSrc={images[(photoIndex + images.length - 1) % images.length].image}
+                                    nextSrc={this.props.images.isLoading ? <Loading/>:images[(photoIndex + 1) % images.length].image}
+                                    imageTitle={images[photoIndex].title}
+                                    prevSrc={this.props.images.isLoading ? <Loading/>:images[(photoIndex + images.length - 1) % images.length].image}
                                     onCloseRequest={() => {
                                         this.setState({isOpen: false});
                                         this.props.show()

@@ -16,9 +16,6 @@ class EnquiryForm extends Component {
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
-    nextStep = () => {
-        this.setState({ step: this.state.step + 1 })
-    }
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.fetchEnquiry(this.state.name, this.state.email, this.state.phone, this.state.message);
@@ -26,16 +23,16 @@ class EnquiryForm extends Component {
     render() {
                 if(!this.props.enq.message) {
                     return (
-                        <div className='container bg-light'>
-                            <h3 className="text-center py-1">Enquiry</h3>
+                        <div className='container bg-dark text-white'>
+                            <h3 className="text-center py-1">Leave a Message</h3>
                             <div className='row'>
                                 <div className='col-sm-6 col-md-6'>
                                     <label htmlFor="name">Name:</label>
-                                    <input onChange={(e) => this.handleChange(e)} value={this.state.name} name='name' className="form-control" type="text" id="name" placeholder="Name"></input>
+                                    <input onChange={(e) => this.handleChange(e)} value={this.state.name} name='name' required={true} className="form-control" type="text" id="name" placeholder="Name"></input>
                                 </div>
                                 <div className="col-sm-6 col-md-6">
                                     <label htmlFor="email">Email:</label>
-                                    <input onChange={(e) => this.handleChange(e)} value={this.state.email} name='email' className='form-control' type="email" id="email" placeholder="Email" />
+                                    <input onChange={(e) => this.handleChange(e)} value={this.state.email} name='email' required={true} className='form-control' type="email" id="email" placeholder="Email" />
                                 </div>
                             </div>
                             <div className="row">
@@ -47,7 +44,7 @@ class EnquiryForm extends Component {
                             <div className="row">
                                 <div className="col-sm-12 col-md-12">
                                     <label htmlFor="mesaage">Message:</label>
-                                    <textarea onChange={(e) => this.handleChange(e)} value={this.state.message} name='message' cols="10" rows="8" id="message" className="form-control"></textarea>
+                                    <textarea onChange={(e) => this.handleChange(e)} value={this.state.message} required name='message' cols="10" rows="4" id="message" className="form-control"></textarea>
                                 </div>
                             </div>
                             <div className="row">
@@ -63,6 +60,8 @@ class EnquiryForm extends Component {
                     )
                 }
                 else {
+                    let error = this.props.enq.message && this.props.enq.message.error;
+                    let message = this.props.enq.message && this.props.enq.message.message;
                     return(
                         <div className='container bg-light nogap'>
                             <div className="row">
@@ -70,8 +69,8 @@ class EnquiryForm extends Component {
                                     <div className='card'>
                                         <div className='card-header'>
                                             <div className='card-title'>
-                                                <i id='icon' className='fa fa-check-circle'></i>
-                                                <h4 className='text-center'>{this.props.enq.message && this.props.enq.message.message}</h4>
+                                            {message ?  <i id='icon' className='fa fa-check-circle'></i>: <i id='icon' style={{color:'red'}} className='fa fa-times'></i>}
+                                                {message ? <h4 className='text-center'>{message}</h4> :  <h4 className='text-center'>{error}</h4>}
                                             </div>
                                         </div>
                                     </div>

@@ -92,7 +92,7 @@ class Reservation extends Component {
                     <form onSubmit={(e) => this.nextStep(e)} className={'form'}>
                         <Modal.Body>
                             <p>*<i>Just a quick note that we might not be able to reply to emails during service, for immediate booking please contact the restaurant directly.</i>
-                                <a className='btn btn-default bg-dark text-white    ' href='tel:0261012713'>Call Restaurant</a> </p>
+                                <a className='btn btn-default bg-dark text-white' href='tel:0261012713'>Call Restaurant</a> </p>
                             <div className={'row'}>
                                 <div className={'col-sm-12 col-md-6'}>
                                     <label htmlFor="name">Name:</label>
@@ -208,6 +208,8 @@ class Reservation extends Component {
             </div>  
             break;
             case 2 :
+                let chosenDate = this.state.date.getDate().toString().length === 1 ?'0'+this.state.date.getDate().toString() : this.state.date.getDate();
+                let chosenMonth = this.state.date.getMonth().toString().length === 1 ? '0'+(this.state.date.getMonth() + 1).toString() : this.state.date.getMonth().toString();
                 form = <ReservationSummary 
                             nextStep = {this.nextStep}
                             postResponse = {this.props.modal}
@@ -215,7 +217,7 @@ class Reservation extends Component {
                             name={this.state.name}
                             email={this.state.email}
                             phone={this.state.phone}
-                            date={`${this.state.date.getDate()} / ${this.state.date.getMonth()} / ${this.state.date.getFullYear()}`}
+                            date={`${chosenDate} / ${chosenMonth} / ${this.state.date.getFullYear()}`}
                             time={this.state.time.toLocaleTimeString('en-AU', { hour: 'numeric', minute: 'numeric', hour12: true })}
                             num_of_guests={this.state.num_of_guests}
                             special_request={this.state.special_request}
@@ -226,6 +228,8 @@ class Reservation extends Component {
                         break;
             case 3 :
                 if(this.props.modal.isLoading) {
+                    let chosenDate = this.state.date.getDate().toString().length === 1 ?'0'+this.state.date.getDate().toString() : this.state.date.getDate();
+                    let chosenMonth = this.state.date.getMonth().toString().length === 1 ? '0'+(this.state.date.getMonth() + 1).toString() : this.state.date.getMonth().toString();
                     form= <ReservationSummary 
                             isLoading = {this.props.modal.isLoading}
                             nextStep = {this.nextStep}
@@ -234,7 +238,7 @@ class Reservation extends Component {
                             name={this.state.name}
                             email={this.state.email}
                             phone={this.state.phone}
-                            date={`${this.state.date.getDate()} / ${this.state.date.getMonth()} / ${this.state.date.getFullYear()}`}
+                            date={`${chosenDate} / ${chosenMonth} / ${this.state.date.getFullYear()}`}
                             time={this.state.time.toLocaleTimeString('en-AU', { hour: 'numeric', minute: 'numeric', hour12: true })}
                             num_of_guests={this.state.num_of_guests}
                             special_request={this.state.special_request}

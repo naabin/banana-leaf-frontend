@@ -28,7 +28,8 @@ class Navigation extends Component{
                             <Dropdown.Menu>
                                 <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/lunch' className='nav-link'>Lunch</NavLink>
                                 <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/dinner' className='nav-link'>Dinner</NavLink>
-                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/special' className='nav-link'>Festive Special</NavLink>
+                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/beverage' className='nav-link'>Beverage</NavLink>
+                                <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  id='Link' to='/menu/festive' className='nav-link'>Festive Special</NavLink>
                             </Dropdown.Menu>
                         </Dropdown>
                         <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  className={'nav-link text-white'} id={'Link'} to={'/booking'}><i className='fa fa-paper-plane'></i> Reservation</NavLink>

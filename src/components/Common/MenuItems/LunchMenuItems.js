@@ -26,7 +26,7 @@ class LunchMenuItems extends Component {
         const desserts = this.props.category && this.props.category.desserts;
 
         return (
-            <div className={'col-sm-12 col-md-12'}>
+            <div className={'col-sm-12 col-md-12 col-lg-12 lunch'}>
                 <div className='p-2'>
                     <Button
                         className='text-uppercase p-2'
