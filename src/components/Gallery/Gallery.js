@@ -44,11 +44,11 @@ class Gallery extends Component {
                                 </div>
                             </div>
                             {isOpen && <Lightbox
-                                mainSrc={images[photoIndex].image}
+                                mainSrc={this.props.images && images[photoIndex].image}
                                 imagePadding={50}
-                                nextSrc={images[(photoIndex + 1) % images.length].image}
+                                nextSrc={this.props.images && images[(photoIndex + 1) % images.length].image}
                                 imageTitle={images[photoIndex].title}
-                                prevSrc={images[(photoIndex + images.length - 1) % images.length].image}
+                                prevSrc={this.props.images && images[(photoIndex + images.length - 1) % images.length].image}
                                 onCloseRequest={() => {
                                     this.setState({ isOpen: false });
                                     this.props.show()
