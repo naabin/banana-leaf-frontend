@@ -39,19 +39,19 @@ class Gallery extends Component {
                             <div key={image.pk} className='col-sm-6 col-md-2 col-lg-2 m-1 p-0 img-responsive'>
                                 <div>                
                                     <div>
-                                       {this.props.images.isLoading ? <Loading/> : <img onClick={() => {
+                                        <img onClick={() => {
                                             this.pkAndIsOpenHandler(index);
                                             this.props.show();
-                                        }} id={'cardImage'} src={image.image} title={image.title} alt=""/>}
+                                        }} id={'cardImage'} src={image.image} title={image.title} alt=""/>
                                         {/* <h3 id="image-text" className="text-center">{image.title}</h3> */}
                                     </div>
                                 </div>
                                 {isOpen && <Lightbox
-                                    mainSrc={this.props.images.isLoading ? <Loading/> :images[photoIndex].image}
+                                    mainSrc={images[photoIndex].image}
                                     imagePadding ={50}
-                                    nextSrc={this.props.images.isLoading ? <Loading/>:images[(photoIndex + 1) % images.length].image}
+                                    nextSrc={images[(photoIndex + 1) % images.length].image}
                                     imageTitle={images[photoIndex].title}
-                                    prevSrc={this.props.images.isLoading ? <Loading/>:images[(photoIndex + images.length - 1) % images.length].image}
+                                    prevSrc={images[(photoIndex + images.length - 1) % images.length].image}
                                     onCloseRequest={() => {
                                         this.setState({isOpen: false});
                                         this.props.show()
