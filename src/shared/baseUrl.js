@@ -1,1 +1,1 @@
-export const basUrl = 'http://banana-leaf-backend-dev.ap-southeast-2.elasticbeanstalk.com/api/';
+export const basUrl = 'http://127.0.0.1:8000/api/';
