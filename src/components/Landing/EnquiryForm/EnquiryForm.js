@@ -52,7 +52,7 @@ class EnquiryForm extends Component {
                                {this.props.enq.isLoading ? <button className="btn btn-success" type="button" disabled>
                             <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             Loading...
-                            </button>:<input onClick={(e) => {this.handleSubmit(e)}} className="form-control btn btn-success m-2" type="submit" />
+                            </button>:<input onClick={(e) => {this.handleSubmit(e)}} className="form-control btn btn-success m-2" type="submit" value='submit' />
                                 }
                                 </div>
                             </div>

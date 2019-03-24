@@ -8,6 +8,7 @@ import * as _ from '../../store/actions/actionCreator'
 import Loading from "../Loading/Loading";
 
 import Lightbox from 'react-image-lightbox'
+import "react-image-lightbox/style.css";
 
 class Gallery extends Component {
     state = {
@@ -25,8 +26,20 @@ class Gallery extends Component {
             isOpen: true
         })
     };
+    onMovePrevRequest = (imageLength) => {
+        this.setState({photoIndex:(this.state.photoIndex + imageLength -1) % imageLength})
+    }
+    onMoveNextRequest = (imageLength) => {
+        this.setState({photoIndex:(this.state.photoIndex + 1) % imageLength})
+    }
     render() {
         const images = this.props.images && this.props.images.images;
+        const imageUrls = [];
+        for(let i=0; i < (images && images.length);i++){
+            if(images && images[i]){
+                imageUrls.push(images && images[i] && images[i].image)
+            }  
+        }
         const { photoIndex, isOpen } = this.state;
         let cardImage = null;
         cardImage = (
@@ -44,21 +57,25 @@ class Gallery extends Component {
                                 </div>
                             </div>
                             {isOpen && <Lightbox
-                                mainSrc={this.props.images && images[photoIndex].image}
-                                imagePadding={50}
-                                nextSrc={this.props.images && images[(photoIndex + 1) % images.length].image}
+
+                                mainSrc={imageUrls[photoIndex]}
+                                mainSrcThumbnail={imageUrls[photoIndex]}
+                                // imagePadding={5}
+                                animationDisabled
+                                enableZoom={false}
+                                nextSrc={imageUrls[(photoIndex + 1) % imageUrls.length]}
+                                nextSrcThumbnail={imageUrls[(photoIndex + 1) % imageUrls.length]}
                                 imageTitle={images[photoIndex].title}
-                                prevSrc={this.props.images && images[(photoIndex + images.length - 1) % images.length].image}
+                                prevSrc={imageUrls[(photoIndex + imageUrls.length - 1) % imageUrls.length]}
+                                prevSrcThumbnail ={imageUrls[(photoIndex + imageUrls.length - 1) % imageUrls.length]}
+
                                 onCloseRequest={() => {
                                     this.setState({ isOpen: false });
                                     this.props.show()
                                 }}
-                                onMovePrevRequest={() => {
-                                    this.setState({ photoIndex: (photoIndex + images.length - 1) % images.length })
-                                }}
-                                onMoveNextRequest={() => {
-                                    this.setState({ photoIndex: (photoIndex + 1) % images.length })
-                                }}
+                                
+                                onMovePrevRequest={() => this.onMovePrevRequest(imageUrls.length)}
+                                onMoveNextRequest={() => this.onMoveNextRequest(imageUrls.length)}
                             />}
                         </div>
                     )
