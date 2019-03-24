@@ -7,8 +7,8 @@ import { connect } from "react-redux";
 import * as _ from '../../store/actions/actionCreator'
 import Loading from "../Loading/Loading";
 
-import Lightbox from 'react-image-lightbox'
-import "react-image-lightbox/style.css";
+import Lightbox from 'react-images'
+
 
 class Gallery extends Component {
     state = {
@@ -27,20 +27,23 @@ class Gallery extends Component {
         })
     };
     onMovePrevRequest = (imageLength) => {
-        this.setState({ photoIndex: (this.state.photoIndex + imageLength - 1) % imageLength })
+        this.setState({ photoIndex: (this.state.photoIndex + imageLength - 1)%imageLength})
     }
     onMoveNextRequest = (imageLength) => {
-        this.setState({ photoIndex: (this.state.photoIndex + 1) % imageLength })
+        this.setState({ photoIndex: (this.state.photoIndex + 1)%imageLength})
+    }
+    gotToImage = (index) =>{
+        this.setState({photoIndex:index})
     }
     render() {
         const images = this.props.images && this.props.images.images;
         const imageUrls = [];
         for (let i = 0; i < (images && images.length); i++) {
             if (images && images[i]) {
-                imageUrls.push(images && images[i] && images[i].image)
+                imageUrls.push({'src':images && images[i] && images[i].image})
             }
         }
-        const { photoIndex, isOpen } = this.state;
+        const { isOpen } = this.state;
         let cardImage = null;
         cardImage = (
             <div className={'row d-flex d-flex justify-content-center'}>
@@ -59,28 +62,9 @@ class Gallery extends Component {
                         </div>
                     )
                 })}
-                {isOpen &&
-                    <Lightbox
+                 </div>
 
-                        mainSrc={imageUrls[photoIndex]}
-                        mainSrcThumbnail={imageUrls[photoIndex]}
-                        animationDisabled
-                        nextSrc={imageUrls[(photoIndex + 1) % imageUrls.length]}
-                        nextSrcThumbnail={imageUrls[(photoIndex + 1) % imageUrls.length]}
-                        imageTitle={images[photoIndex].title}
-                        prevSrc={imageUrls[(photoIndex + imageUrls.length - 1) % imageUrls.length]}
-                        prevSrcThumbnail={imageUrls[(photoIndex + imageUrls.length - 1) % imageUrls.length]}
-
-                        onCloseRequest={() => {
-                            this.setState({ isOpen: false });
-                            this.props.show()
-                        }}
-
-                        onMovePrevRequest={() => this.onMovePrevRequest(imageUrls.length)}
-                        onMoveNextRequest={() => this.onMoveNextRequest(imageUrls.length)}
-                    />
-                }
-            </div>
+           
 
 
 
@@ -88,6 +72,25 @@ class Gallery extends Component {
         return (
             <div id='Gallery'>
                 {this.props.images.isLoading ? <Loading /> : cardImage}
+                {
+                    <Lightbox
+                        preventScroll
+                        spinner={()=><Loading/>}
+                        currentImage={this.state.photoIndex}
+                        isOpen={isOpen}
+                        showThumbnails
+                        onClickThumbnail={this.gotToImage}
+                        images={imageUrls}
+                        enableZoom={false}
+                        onClickNext={() => this.onMoveNextRequest(imageUrls.length)}
+                        onClickPrev={()=>this.onMovePrevRequest(imageUrls.length)}
+                        onClose={() => {
+                            this.setState({ isOpen: false });
+                            this.props.show()
+                        }}
+                    />
+                    
+                }
             </div>
 
 

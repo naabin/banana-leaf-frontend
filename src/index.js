@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
-import 'react-image-lightbox/style.css';
 import "react-datepicker/dist/react-datepicker.css";
 import {applyMiddleware, compose, combineReducers, createStore} from 'redux';
 import thunk from 'redux-thunk';
