@@ -16,11 +16,10 @@ class  BookingConfirmation extends Component {
     }
     render(){
         let message = this.props.confirmation.message;
-        console.log(message);
         let confirmation = null;
         if (this.props.confirmation && this.props.confirmation.message) {
             confirmation = (
-                <Modal  show={this.state.show} onHide={this.toggleShow}>
+                <Modal  show={this.state.show} onHide={()=> {this.toggleShow(); this.props.hide()}}>
                     <Modal.Header className="bg-success" closeButton>
                         <Modal.Title>
                         <p className="text-white text-center">{message.message}</p>

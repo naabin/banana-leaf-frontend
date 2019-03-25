@@ -11,8 +11,8 @@ import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
 import Landing from "./components/Landing/Landing";
 import Gallery from "./components/Gallery/Gallery";
-import Reservation from "./components/Reservation/Reservation";
 import Contact from './components/Contact/Conatct';
+import ReservationPage from './components/Reservation/ReservationPage/ReservationPage';
 
 
 class App extends Component {
@@ -37,10 +37,10 @@ class App extends Component {
         return (
             <>
                 <div className="App">
-                    <Navigation show={this.state.showStickyNav} showModal={this.props.show}/>
+                <Navigation show={this.state.showStickyNav} showModal={this.props.show}/>
                     <Switch>
                         <Route path='/menu' render={() => <Menu route={this.props}/>}/>
-                        <Route path= '/booking' render={() => <Reservation/>}/>
+                        <Route path= '/booking' render={() => <ReservationPage show={this.props.show}/>}/>
                         <Route path='/gallery' render={() => <Gallery show={this.changeShowStickyNav}/>}/>
                         <Route path='/contact' render = {() => <Contact/>}/>
                         <Route path='/' exact component={Landing}/>

@@ -211,6 +211,7 @@ class Reservation extends Component {
                 let chosenDate = this.state.date.getDate().toString().length === 1 ?'0'+this.state.date.getDate().toString() : this.state.date.getDate();
                 let chosenMonth = this.state.date.getMonth().toString().length === 1 ? '0'+(this.state.date.getMonth() + 1).toString() : this.state.date.getMonth().toString();
                 form = <ReservationSummary 
+                        
                             nextStep = {this.nextStep}
                             postResponse = {this.props.modal}
                             submit = {this.handleSubmit}
@@ -230,7 +231,8 @@ class Reservation extends Component {
                 if(this.props.modal.isLoading) {
                     let chosenDate = this.state.date.getDate().toString().length === 1 ?'0'+this.state.date.getDate().toString() : this.state.date.getDate();
                     let chosenMonth = this.state.date.getMonth().toString().length === 1 ? '0'+(this.state.date.getMonth() + 1).toString() : this.state.date.getMonth().toString();
-                    form= <ReservationSummary 
+                    form= <ReservationSummary
+                            
                             isLoading = {this.props.modal.isLoading}
                             nextStep = {this.nextStep}
                             postResponse = {this.props.modal}
@@ -248,10 +250,12 @@ class Reservation extends Component {
                         /> 
                     
                 }
-                else{
-                        form =  <BookingConfirmation 
-                        goBack = {this.prevStep}
-                        confirmation = {this.props.modal}
+                else{   
+                        
+                        form =  <BookingConfirmation
+                            hide = {this.props.hide}
+                            goBack = {this.prevStep}
+                            confirmation = {this.props.modal}
                     />
                 }
                 break;
@@ -260,11 +264,8 @@ class Reservation extends Component {
                 return null;
             }
             return(
-                <>{form}
-                <div className='col-sm-12 col-md-12 p-4 d-flex justify-content-center'>
-                    <button onClick={(e) => this.props.show()} className={'btn btn-dark border-none  btn-lg'}><i className="fa fa-check"></i> Book a Table
-                    </button>
-                </div>
+                <>
+                {form}
                 </>
             )
 

@@ -72,7 +72,7 @@ class Gallery extends Component {
         return (
             <div id='Gallery'>
                 {this.props.images.isLoading ? <Loading /> : cardImage}
-                {
+                {isOpen && 
                     <Lightbox
                         preventScroll
                         spinner={()=><Loading/>}

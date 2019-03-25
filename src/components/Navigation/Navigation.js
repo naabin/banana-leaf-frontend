@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Navbar, Nav, Dropdown,} from 'react-bootstrap'
+import { Nav, Dropdown, Navbar} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 import './Navigation.css'
 
@@ -17,7 +17,7 @@ class Navigation extends Component{
 
     render(){
         return (
-            <Navbar onToggle={() => this.setExpanded()} expanded={this.state.expanded}  expand='xl' className="col-sm-12" sticky={this.props.show ? 'top ' : null} >
+            <Navbar onToggle={() => this.setExpanded()}  sticky={this.props.show ? 'top' : null} expanded={this.state.expanded}  expand='xl' className="col-sm-12">
                 <Navbar.Brand><NavLink className={'nav-link'} id={'Link'} to='/'>
                     <img src={require("../../assets/logo.png")}className={'img'} alt=""/></NavLink></Navbar.Brand>
                 <Navbar.Toggle className='bg-white p-4 rounded-0 navbar-toggler'/>
