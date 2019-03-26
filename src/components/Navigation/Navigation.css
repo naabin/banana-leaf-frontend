@@ -2,6 +2,7 @@
     height: 100%;
     width: 100%;
     background: linear-gradient(100deg,rgb(33, 36, 75),#011b1d);
+    /* background: rgb(124, 99, 99); */
     padding: 0;
     margin: 0;
 }
@@ -14,7 +15,7 @@
 }
 #Link:hover{
     border: 1px solid white;
-    background-color: #3c763d;
+    background-color: #099951e1;
     color: whitesmoke;
     border-radius: 5px;
     text-align: center;

@@ -13,30 +13,30 @@ const DieteryIcon = props => {
     const vegan = props.vegan;
     return (
         <>
-        <OverlayTrigger overlay={<Tooltip>gluten free</Tooltip>}>
+        <OverlayTrigger  overlay={<Tooltip>gluten free</Tooltip>}>
             <span className='d-inline-block'>
-                <div>
+                <div onClick={() => <Tooltip>gluten free</Tooltip>} >
                     {gluten ? <div id='gluten'><p id='glutenFree'>G</p></div> : null}
                 </div>
             </span>
         </OverlayTrigger>
         <OverlayTrigger overlay={<Tooltip> dairy free</Tooltip>}>
             <span className='d-inline-block'>
-                <div>
+                <div  onClick={() => <Tooltip>gluten free</Tooltip>} >
                     {dairy ? <div id='gluten'><p id='glutenFree'>D</p></div> : null}
                 </div>
             </span>
         </OverlayTrigger>
         <OverlayTrigger overlay={<Tooltip> vegetarian</Tooltip>}>
             <span className='d-inline-block'>
-                <div>
+                <div  onClick={() => <Tooltip>gluten free</Tooltip>} >
                     {vegetarian ? <div id='gluten'><p id='glutenFree'>V</p></div> : null}
                 </div>
             </span>
         </OverlayTrigger>
         <OverlayTrigger overlay={<Tooltip> vegan</Tooltip>}>
             <span className='d-inline-block'>
-                <div>
+                <div  onClick={() => <Tooltip>gluten free</Tooltip>} >
                     {vegan ? <div id='gluten'><p id='glutenFree'>VG</p></div> : null}
                 </div>
             </span>
