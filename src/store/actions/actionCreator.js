@@ -150,7 +150,7 @@ export const postFailed = (error) => {
 }
 
 
-export const fetchFields = (name, email, phone, date, time, num_of_guests, special_request) => dispatch => {
+export const fetchFields = (name, email, phone, date, time, num_of_guests, special_request,confirmed) => dispatch => {
     dispatch(postBookingLoading())
     return fetch(basUrl + 'reservation/', {
         headers: {
@@ -164,7 +164,8 @@ export const fetchFields = (name, email, phone, date, time, num_of_guests, speci
             date: date,
             time: time,
             num_of_people: num_of_guests,
-            special_req: special_request
+            special_req: special_request,
+            confirmed: confirmed
         }),
     })
         .then(res => {

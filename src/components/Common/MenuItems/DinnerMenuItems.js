@@ -20,6 +20,9 @@ class DinnerMenuItems extends Component {
         const mains = this.props.category && this.props.category.mains;
         const sides = this.props.category && this.props.category.sides;
         const desserts = this.props.category && this.props.category.desserts;
+
+        const isMainsPrice = true;
+        const isEntreePrice = true
         return (
             <div className='col-sm-12 col-md-12'>
                 <div className='p-2'>
@@ -47,9 +50,10 @@ class DinnerMenuItems extends Component {
                                                 dairyFree={item.is_dairy_free}
                                                 vegetarian={item.is_vegetarian}
                                                 vegan={item.is_vegan}
+                                                mains_price={item.mains_price}
 
                                             />
-                                                <p className='float-right'>{'//'}{item.price}</p></h4>
+                                                <div className='float-right'>{'//'}<DieteryIcon entreePriceShow={isEntreePrice} mains_price={item.mains_price} />{item.price}   <DieteryIcon mainsPriceShow={isMainsPrice} mains_price={item.mains_price} />{item.mains_price ? '//' + item.mains_price : null}</div></h4>
                                             {item.description ? <p className='col-sm-12 col-md-9 noGap'>{item.description}</p> : null}
                                         </div>
                                     </div>

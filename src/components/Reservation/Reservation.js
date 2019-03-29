@@ -26,7 +26,8 @@ class Reservation extends Component {
         date: new Date(),
         time: new Date(),
         num_of_guests: undefined,
-        special_request: ''
+        special_request: '',
+        confirmed: false
     };
     prevStep = (e) => {
         e.preventDefault();
@@ -65,9 +66,9 @@ class Reservation extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.nextStep(e);
-        var date = `${this.state.date.getFullYear()}-${this.state.date.getMonth()}-${this.state.date.getDate()}`
+        var date = `${this.state.date.getFullYear()}-${this.state.date.getMonth().toString().length === 1 ?'0'+(this.state.date.getMonth()+1 ).toString() : this.state.date.getMonth().toString()}-${this.state.date.getDate()}`
         var time = `${this.state.time.getHours()}:${this.state.time.getMinutes()}`
-        this.props.postBooking(this.state.name, this.state.email, this.state.phone, date, time, this.state.num_of_guests, this.state.special_request);
+        this.props.postBooking(this.state.name, this.state.email, this.state.phone, date, time, this.state.num_of_guests, this.state.special_request, this.state.confirmed);
     };
     anyRequiredFieldMissing = form =>{ 
         return Array.from(form.elements).filter(x=>x.required).every(el=>el.value && el.value.trim()!=='')
@@ -248,7 +249,6 @@ class Reservation extends Component {
                             next={this.nextStep} 
                             previous={this.prevStep} 
                         /> 
-                    
                 }
                 else{   
                         
@@ -282,7 +282,7 @@ const mapDispatchToProps = dispatch => {
     return {
         show: () => dispatch(_.showModal()),
         hide: () => dispatch(_.hideModal()),
-        postBooking: (name, email, phone, date, time, num_of_guests, special_request) => dispatch(_.fetchFields(name, email, phone, date, time, num_of_guests, special_request))
+        postBooking: (name, email, phone, date, time, num_of_guests, special_request,confirmed) => dispatch(_.fetchFields(name, email, phone, date, time, num_of_guests, special_request, confirmed))
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Reservation);

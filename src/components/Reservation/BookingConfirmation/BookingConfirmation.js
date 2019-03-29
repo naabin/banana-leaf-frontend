@@ -34,7 +34,7 @@ class  BookingConfirmation extends Component {
                     <Modal.Header className="bg-danger" closeButton>
                         <Modal.Title>
                         <p className="text-white text-center">
-                            Could not process the request. Please try again and complete all the required fields.
+                            Something went wrong. Please try again!
                         </p>
                         </Modal.Title>
                     </Modal.Header>
