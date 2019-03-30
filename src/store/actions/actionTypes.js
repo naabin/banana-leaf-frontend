@@ -7,6 +7,7 @@ export const GET_DINNER = "GET_DINNER";
 export const DINNER_FAILED = "DINNER_FAILED";
 
 export const GET_IMAGES = "GET_IMAGES";
+export const IMAGES_REFRESHING = "IMAGES_REFRESHING";
 export const IMAGES_LOADING = "IMAGES_LOADING";
 export const IMAGES_FAILED = "IMAGES_FAILED";
 

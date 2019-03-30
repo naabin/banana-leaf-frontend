@@ -6,10 +6,10 @@ export const imagesLoading = () => {
         type: _.IMAGES_LOADING
     }
 };
-export const getImages = (images) => {
+export const getImages = (images, append) => {
     return {
         type: _.GET_IMAGES,
-        payload: images
+        payload: {images, append}
     }
 };
 export const imageFailed = (error) => {
@@ -18,12 +18,22 @@ export const imageFailed = (error) => {
         payload: error
     }
 };
+export const imageRefreshing = () => {
+    return {
+        type: _.IMAGES_REFRESHING,
+    }
 
-export const fetchImages = () => dispatch => {
-    dispatch(imagesLoading());
-    return fetch(basUrl + 'images/')
+}
+
+export const fetchImages = (next, append) => dispatch => {
+    if(!append){
+        dispatch(imagesLoading());
+    }
+    dispatch(imageRefreshing);
+    return fetch(basUrl + `images/?page_size=${next}`)
         .then(res => {
             if (res.ok) {
+
                 return res;
             }
             else {
@@ -36,7 +46,7 @@ export const fetchImages = () => dispatch => {
             throw error;
         })
         .then(res => res.json())
-        .then(images => dispatch(getImages(images)))
+        .then(images => dispatch(getImages(images, append)))
         .catch(error => dispatch(imageFailed(error)))
 };
 

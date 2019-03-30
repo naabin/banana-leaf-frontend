@@ -19,9 +19,6 @@ class App extends Component {
     state={
         showStickyNav: true
     };
-    componentWillMount() {
-        this.props.fetchImages();
-    }
     changeShowStickyNav = ()=> {
       this.setState({showStickyNav: !this.state.showStickyNav})
     };
@@ -41,7 +38,7 @@ class App extends Component {
                     <Switch>
                         <Route path='/menu' render={() => <Menu route={this.props}/>}/>
                         <Route path= '/booking' render={() => <ReservationPage show={this.props.show}/>}/>
-                        <Route path='/gallery' render={() => <Gallery show={this.changeShowStickyNav}/>}/>
+                        <Route path='/gallery' render={() => <Gallery router = {this.props} show={this.changeShowStickyNav}/>}/>
                         <Route path='/contact' render = {() => <Contact/>}/>
                         <Route path='/' exact component={Landing}/>
                     </Switch>
@@ -52,17 +49,12 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        image: state.images
-    }
-};
+
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchImages: () => dispatch(_.fetchImages()),
         show: ()=>dispatch(_.showModal())
     }
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(null, mapDispatchToProps)(App));

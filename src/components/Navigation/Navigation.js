@@ -33,7 +33,7 @@ class Navigation extends Component{
                             </Dropdown.Menu>
                         </Dropdown>
                         <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  className={'nav-link text-white'} id={'Link'} to={'/booking'}><i className='fa fa-paper-plane'></i> Reservation</NavLink>
-                        <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  className={'nav-link text-white'} id={'Link'} to={`/gallery`}><i className='fa fa-image'></i> Gallery</NavLink>
+                        <NavLink onClick={this.closeNav} style={{textAlign:'center'}}  className={'nav-link text-white'} id={'Link'} to={`/gallery/?${this.props.pageNumber ? this.props.pageNumber: ''}`}><i className='fa fa-image'></i> Gallery</NavLink>
                         <NavLink onClick={this.closeNav} style={{textAlign:'center'}} className={'nav-link text-white'} id={'Link'} to={'/contact'}  ><i className="fa fa-address-book"></i> Contact</NavLink>
                     </Nav>
                 </Navbar.Collapse>
