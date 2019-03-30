@@ -53,7 +53,7 @@ class DinnerMenuItems extends Component {
                                                 mains_price={item.mains_price}
 
                                             />
-                                                <div className='float-right'>{'//'}<DieteryIcon entreePriceShow={isEntreePrice} mains_price={item.mains_price} />{item.price}   <DieteryIcon mainsPriceShow={isMainsPrice} mains_price={item.mains_price} />{item.mains_price ? '//' + item.mains_price : null}</div></h4>
+                                                <div className='float-right'><DieteryIcon entreePriceShow={isEntreePrice} mains_price={item.mains_price} />{'//'}{item.price}   <DieteryIcon mainsPriceShow={isMainsPrice} mains_price={item.mains_price} />{item.mains_price ? '//' + item.mains_price : null}</div></h4>
                                             {item.description ? <p className='col-sm-12 col-md-9 noGap'>{item.description}</p> : null}
                                         </div>
                                     </div>

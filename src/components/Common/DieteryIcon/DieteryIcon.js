@@ -11,7 +11,6 @@ const DieteryIcon = props => {
     const dairy = props.dairyFree;
     const vegetarian = props.vegetarian;
     const vegan = props.vegan;
-    console.log(props.mains_price ? props.mains_price: null);
     return (
         <>
         <OverlayTrigger  overlay={<Tooltip>gluten free</Tooltip>}>

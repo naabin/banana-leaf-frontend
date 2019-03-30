@@ -74,7 +74,8 @@ class Gallery extends Component {
                 {this.props.images.isLoading ? <Loading /> : cardImage}
                 {isOpen && 
                     <Lightbox
-                        preventScroll
+                        
+                        preventScroll={false}
                         spinner={()=><Loading/>}
                         currentImage={this.state.photoIndex}
                         isOpen={isOpen}
