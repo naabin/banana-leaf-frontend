@@ -155,7 +155,7 @@ class LunchMenuItems extends Component {
                                                     dairyFree={item.is_dairy_free}
                                                     vegetarian={item.is_vegetarian}
                                                     vegan={item.is_vegan} />
-                                                <p className='float-right'>{'//'}{item.price}</p></h4>
+                                                <p className='float-right'>{'//'}{item.lunch_price}</p></h4>
                                             {item.description ? <p className='col-sm-12 col-md-9 noGap'>{item.description}</p> : null}
                                         </div>
                                     </div>
