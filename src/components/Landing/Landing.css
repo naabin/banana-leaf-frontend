@@ -128,7 +128,7 @@ h1, h5 {
     position: absolute;
     left: -260px;
     transition: 0.3s;
-    padding: 15px;
+    padding: 10px;
     width: 300px;
     text-decoration: none;
     font-size: 20px;
@@ -138,18 +138,24 @@ h1, h5 {
 #sideNav button:hover {
     left: 0;
   }
+#review-button {
+    top:540px;
+}
 #tripAdvisor {
-    top: 590px;
+    top: 610px;
 }
 #facebook {
-    top: 660px;
+    top: 680px;
 }
 #instagram {
-    top: 730px;
+    top: 750px;
 }
 @media(max-width:375px){
     #sideNav button:hover {
         left: -260px;
+    }
+    #review-button {
+        top: 620px;
     }
     #tripAdvisor {
         top: 680px;
@@ -165,14 +171,17 @@ h1, h5 {
     #sideNav button:hover {
         left: -260px;
     }
+    #review-button {
+        top: 650px;
+    }
     #tripAdvisor {
-        top: 680px;
+        top: 720px;
     }
     #facebook {
-        top: 750px;
+        top: 790px;
     }
     #instagram {
-        top: 820px;
+        top: 860px;
     }
 }
 
@@ -180,53 +189,4 @@ h1, h5 {
     width: 100%;
     height: 100px;
     cursor: pointer;
-}
-.message-orange {
-    position: relative;
-    margin-bottom: 10px;
-    margin-left: calc(100% - 240px);
-    padding: 5px;
-    background-color: teal;
-    width: 200px;
-    height: 200px;
-    text-align: left;
-    font: 400 .9em 'Open Sans', sans-serif;
-    border: 1px solid #dfd087;
-    border-radius: 10px;
-}
-.message-timestamp-right {
-    position: absolute;
-    font-size: .85em;
-    font-weight: 300;
-    /* bottom: 5px; */
-    right: 5px;
-}
-.review-image {
-    display: block;
-    width: 100%;
-    height: 40%;
-}
-
-.message-orange:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-bottom: 15px solid teal;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    bottom: 0;
-    right: -15px;
-}
-
-.message-orange:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-bottom: 17px solid #dfd087;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    bottom: -1px;
-    right: -17px;
 }

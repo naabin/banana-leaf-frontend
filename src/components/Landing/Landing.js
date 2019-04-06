@@ -43,19 +43,8 @@ class Landing extends Component {
                         <div className='col-sm-12 my-4 col-md-4 justify-content-center'>
                             <OpeningHours/>
                         </div>
-                            <div onClick={() => 
-                                window.open('https://www.goodfood.com.au/banana-leaf-kingston/banana-leaf-review-20190401-h1d178', '_blank')}  className="review-container float-right">
-                            <div className="message-orange">
-                                <img className="review-image" src="https://www.goodfood.com.au/content/dam/images/h/1/c/x/4/o/image.related.articleLeadwide.620x349.h1d178.png/1554084118493.jpg" alt='review'></img>
-                                <p className="message-content">
-                                    Banana Leaf refined with a healthy respect for tradition.
-                                </p>
-                                <div className="message-timestamp-right">
-                                        www.goodfood.com.au
-                                    </div>
-                                </div>
-                        </div>
-                        <div id='sideNav' className='side'>
+                        <div id='sideNav' className='side py-3'>
+                            <button id='review-button' onClick={()=> window.open('https://www.goodfood.com.au/banana-leaf-kingston/banana-leaf-review-20190401-h1d178', '_blank')} className={'btn btn-primary btn-lg  m-2'} >Reviews<i className={'fa fa-comment float-right p-2 '}></i></button>
                             <button id="tripAdvisor" onClick={() => window.open('https://www.tripadvisor.com.au/Restaurant_Review-g255057-d1082008-Reviews-Banana_Leaf-Canberra_Australian_Capital_Territory.html', '_blank')} className={'btn btn-default bg-info btn-lg m-2'}>Give us a feedback on <i className="fa fa-tripadvisor float-right p-2"></i></button>
                             <button id="facebook" onClick={() => window.open('https://www.facebook.com/BananaLeafCanberra', '_blank')} className={'btn btn-primary btn-lg  m-2'}>Like us on Facebook<i className={'fa fa-facebook-square float-right p-2 '}></i></button>
                             <button id="instagram" onClick={() => window.open('https://www.instagram.com/bananaleaf.canberra/', '_blank')} className={'btn btn-danger btn-lg  m-2'}>Follow us on Instagram<i className={'fa fa-instagram float-right p-2 '}></i></button>
