@@ -77,7 +77,7 @@ class Reservation extends Component {
         const minTime = new Date()
         minTime.setHours(11);
         const maxTime = new Date()
-        maxTime.setHours(19);
+        maxTime.setHours(20);
         const {step} = this.state;
         let form = null;
         switch(step) {
