@@ -1,8 +1,9 @@
 .navbar{
-    height: 100%;
+    height: 10%;
     width: 100%;
-    background: linear-gradient(100deg,rgb(33, 36, 75),#011b1d);
-    /* background: rgb(124, 99, 99); */
+    background:linear-gradient(90deg,rgb(1, 17, 1),rgb(10, 14, 9));
+    position: fixed;
+    top:0;
     padding: 0;
     margin: 0;
 }
@@ -15,7 +16,7 @@
 }
 #Link:hover{
     border: 1px solid white;
-    background-color: #099951e1;
+    background-color: #042213e1;
     color: whitesmoke;
     border-radius: 5px;
     text-align: center;
@@ -23,13 +24,19 @@
 #nav {
     margin-left: 65%;
     width: 100%;
-    float: right;
+    float: right;   
 }
 .dropdown {
     padding-top: 0;
+    height: 100%;
 }
 @media(max-width:  1260px) {
     .dropdown {
         padding-top: 25px;
     }
+    .navbar{
+        position: fixed;
+        height:auto;
+    }
+
 }

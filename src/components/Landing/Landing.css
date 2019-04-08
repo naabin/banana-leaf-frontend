@@ -3,38 +3,10 @@
     width: 100%;
     height: 100%;
 }
-
-.special {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
 h1, h5 {
     z-index:1000;
     font-weight: 900;
-    font-size: 5rem;
     text-align: center;
-}
-.carousel {
-    background: rgba(0, 0, 0, 0.7);
-    display: block;
-    height: 100%;
-    width: 100%;
-    
-}
-.carousel-item{
-    max-height: 400px;
-    resize: both;
-    position: relative;
-} 
-.carousel-item img{
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-.carousel-caption h4 {
-    background-color:rgba(25, 25,25, 0.4);
-    z-index: 1000;   
 }
 #welcome {
     display: flex;
@@ -44,10 +16,10 @@ h1, h5 {
     width: 100%;
     height: 100%;
     background-image: url('../../assets/home.jpg');
-    background-color:rgba(0, 0, 0, 0.2);
+    background-color: rgba(100, 100, 100, 0.25);
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-blend-mode: difference; */
+    background-blend-mode: difference;
     padding: 300px 0 300px 0;
     color: whitesmoke;
     background-blend-mode:overlay;
@@ -139,23 +111,23 @@ h1, h5 {
     left: 0;
   }
 #review-button {
-    top:540px;
+    top:690px;
 }
 #tripAdvisor {
-    top: 610px;
+    top: 750px;
 }
 #facebook {
-    top: 680px;
+    top: 810px;
 }
 #instagram {
-    top: 750px;
+    top: 870px;
 }
 @media(max-width:375px){
     #sideNav button:hover {
         left: -260px;
     }
     #review-button {
-        top: 620px;
+        top: 650px;
     }
     #tripAdvisor {
         top: 680px;
@@ -172,21 +144,15 @@ h1, h5 {
         left: -260px;
     }
     #review-button {
-        top: 650px;
-    }
-    #tripAdvisor {
-        top: 720px;
-    }
-    #facebook {
         top: 790px;
     }
-    #instagram {
-        top: 860px;
+    #tripAdvisor {
+        top: 850px;
     }
-}
-
-.review-container {
-    width: 100%;
-    height: 100px;
-    cursor: pointer;
+    #facebook {
+        top: 910px;
+    }
+    #instagram {
+        top: 970px;
+    }
 }

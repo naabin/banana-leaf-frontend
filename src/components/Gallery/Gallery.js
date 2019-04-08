@@ -14,31 +14,37 @@ class Gallery extends Component {
     state = {
         photoIndex: 0,
         isOpen: false,
+        imageName: '',
     };
 
     componentDidMount() {
         this.props.fetchImages(1, null);
     }
-    pkAndIsOpenHandler = (pk) => {
+    pkAndIsOpenHandler = (pk, imagePk, imageName) => {
         this.setState({
             photoIndex: pk,
-            isOpen: true
+            isOpen: true,
         })
+        let pathName =  this.props.router.location.pathname = `/gallery/${imagePk}/${imageName}`;
+        this.props.router.history.push(pathName)
     };
-    onMovePrevRequest = (imageLength) => {
+    onMovePrevRequest = (imageLength, image) => {
         this.setState({ photoIndex: (this.state.photoIndex + imageLength - 1) % imageLength })
+        let pathName =  this.props.router.location.pathname = `/gallery/${image && image.pk }/${image && image.name}`;
+        this.props.router.history.push(pathName)
     }
-    onMoveNextRequest = (imageLength) => {
+    onMoveNextRequest = (imageLength, image) => {
         this.setState({ photoIndex: (this.state.photoIndex + 1) % imageLength })
+        let pathName =  this.props.router.location.pathname = `/gallery/${image && image.pk }/${image && image.name}`;
+        this.props.router.history.push(pathName)
     }
+
     gotToImage = (index) => {
         this.setState({ photoIndex: index })
     }
     nextFetchImage = (e) => {
         if(this.props.images.nextPage !== null){
             this.props.imageLoading();
-            let pathName =  this.props.router.location.pathname = `/gallery/${this.props.images.nextPage}`;
-            this.props.router.history.push(pathName)
             this.props.fetchImages(this.props.images.nextPage, true)
         }
     }
@@ -48,11 +54,13 @@ class Gallery extends Component {
         const imageUrls = [];
         for (let i = 0; i < (images && images.length); i++) {
             if (images && images[i]) {
-                imageUrls.push({ 'src': images && images[i] && images[i].image })
+                imageUrls.push({ 'src': images && images[i] && images[i].image, 'name': images && images[i] && images[i].title, 'pk': images && images[i].pk })
             }
         }
         const { isOpen } = this.state;
         let cardImage = null;
+        const url = window.location.href;
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
         cardImage = (
             <>
                 <div className={'row d-flex d-flex justify-content-center'}>
@@ -62,10 +70,12 @@ class Gallery extends Component {
                                 <div>
                                     <div>
                                         <img onClick={() => {
-                                            this.pkAndIsOpenHandler(index);
+                                            this.pkAndIsOpenHandler(index, image.pk, image.title);
                                             this.props.show();
                                         }} id={'cardImage'} src={image.image} title={image.title} alt="" />
+                                        <a id='image-text' className="btn btn-default btn-block" href={facebookUrl} rel="noopener noreferrer" target="_blank"> <i className="fa fa-facebook-square"></i></a>
                                         {/* <h3 id="image-text" className="text-center">{image.title}</h3> */}
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +96,6 @@ class Gallery extends Component {
                 {this.props.images.isLoading ? <Loading /> : cardImage}
                 {isOpen &&
                     <Lightbox
-
                         preventScroll={false}
                         spinner={() => <Loading />}
                         currentImage={this.state.photoIndex}
@@ -95,8 +104,8 @@ class Gallery extends Component {
                         onClickThumbnail={this.gotToImage}
                         images={imageUrls}
                         enableZoom={false}
-                        onClickNext={() => this.onMoveNextRequest(imageUrls.length)}
-                        onClickPrev={() => this.onMovePrevRequest(imageUrls.length)}
+                        onClickNext={() => this.onMoveNextRequest(imageUrls.length, imageUrls.filter((_blank,index) => index  === this.state.photoIndex + 1)[0])}
+                        onClickPrev={() => this.onMovePrevRequest(imageUrls.length, imageUrls.filter((_blank, index)=> index === this.state.photoIndex -1 )[0])}
                         onClose={() => {
                             this.setState({ isOpen: false });
                             this.props.show()
