@@ -1,8 +1,20 @@
 #festive {
-    padding-left: 390px !important;
+    padding-left: 370px !important;
+
+}
+/* @media(max-width:830px){
+    #festive {
+        padding-left: 0 !important;
+    }
+} */
+@media(max-width:1170px){
+    #festive {
+        padding-left: 0 !important;
+    }
 }
 @media(max-width:499px){
     #festive{
         padding-left: 0 !important;
+        margin-left: 0 !important;
     }
 }
