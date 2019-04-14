@@ -39,7 +39,7 @@ class App extends Component {
                 <div className="App">
                 <Helmet>
                     <title>Banana Leaf Restaurant</title>
-                    <meta name="description" content="SRI LANKAN CUISINE IN KINGSTON CANBERRA.Bringing the authentic 
+                    <meta name="description" content="Sri Lankan Cuisine in Kingston Canberra.Bringing the authentic 
                     Sri Lankan culinary experience to the heart of Canberra ! Relaxed place with simple decor and outdoor tables, serving Sri Lankan dishes and basic bistro food" />
                     <meta name="keywords" cpntent="" />
                 </Helmet>

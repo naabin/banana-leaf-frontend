@@ -1,0 +1,8 @@
+#festive {
+    padding-left: 390px !important;
+}
+@media(max-width:499px){
+    #festive{
+        padding-left: 0 !important;
+    }
+}

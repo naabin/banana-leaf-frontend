@@ -59,8 +59,8 @@ class Gallery extends Component {
         }
         const { isOpen } = this.state;
         let cardImage = null;
-        const url = window.location.href;
-        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        // const url = window.location.href;
+        // const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
         cardImage = (
             <>
                 <div className={'row d-flex d-flex justify-content-center'}>

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
-
 import './Landing.css';
 import * as _ from '../../store/actions/actionCreator';
 import Reservation from "../Reservation/Reservation";
 import AboutUs from './AboutUs/AboutUs';
 import OpeningHours from './OpeningHours/OpeningHours';
+import EasterSpecial from '../EasterSpecial/EasterSpecial';
 
 
 class Landing extends Component {
@@ -21,9 +21,12 @@ class Landing extends Component {
             <AboutUs />
         </div>
         return (
-            <>
-                <div className=''>
+            <>  
+                <div className='col-sm-12 col-md-12 col-lg-12'>
+                    
+                </div>
                     <div id={'welcome'} className={'col-sm-12  col-md-12 col-lg-12'}>
+                    <EasterSpecial/> 
                     <div className='title col-sm-12 col-md-12'>
                             <h1 style={{fontSize:'4rem'}}> BANANA LEAF</h1>
                             <h5 style={{fontSize:'1.5rem'}}> SRI LANKAN CUISINE IN KINGSTON CANBERRA</h5>
@@ -53,7 +56,6 @@ class Landing extends Component {
                         </div>
                         </div>
                     </div>
-                </div>
                 <div className='container-fluid'>
                     {item}
                 </div>
@@ -72,7 +74,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         specialOFD: () => dispatch(_.fetchDinnerMenu()),
-        showModal: () => dispatch(_.showModal())
+        showModal: () => dispatch(_.showModal()),
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Landing);

@@ -16,7 +16,7 @@ h1, h5 {
     width: 100%;
     height: 100%;
     background-image: url('../../assets/home.jpg');
-    background-color: rgba(100, 100, 100, 0.25);
+    background-color: rgba(0, 0, 0, 0.5);
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: difference;
@@ -144,15 +144,15 @@ h1, h5 {
         left: -260px;
     }
     #review-button {
-        top: 790px;
+        top: 1010px;
     }
     #tripAdvisor {
-        top: 850px;
+        top: 1070px;
     }
     #facebook {
-        top: 910px;
+        top: 1130px;
     }
     #instagram {
-        top: 970px;
+        top: 1190px;
     }
 }

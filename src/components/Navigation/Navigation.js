@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { Nav, Dropdown, Navbar} from 'react-bootstrap'
-import {NavLink} from 'react-router-dom'
+import { Nav, Dropdown, Navbar} from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 
-import './Navigation.css'
+import './Navigation.css';
 
 
 class Navigation extends Component{
@@ -22,6 +22,7 @@ class Navigation extends Component{
 
     render(){
         return (
+            <>
             <Navbar collapseOnSelect  onToggle={this.setExpanded} sticky={this.props.show ? 'top' : null} expanded={this.state.expanded}  expand='xl' className="col-sm-12">
                 <Navbar.Brand><NavLink className={'nav-link'} id={'Link'} to='/'>
                     <img src={require("../../assets/logo.png")}className={'img'} alt=""/></NavLink></Navbar.Brand>
@@ -44,18 +45,7 @@ class Navigation extends Component{
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            // <div>
-            //     <Button
-            //         ch
-            //         label ="Toggle"
-            //         onClick={this.openHandler}
-            //     ></Button>
-            //     <Drawer open={this.state.open}>
-            //         <MenuItem>Item 1</MenuItem>
-            //         <MenuItem>Item 1</MenuItem>
-            //         <MenuItem>Item 1</MenuItem>
-            //     </Drawer>
-            // </div>
+            </>
         )
     }
 
