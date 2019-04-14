@@ -39,7 +39,7 @@ const Festive = props => {
                 <div className='card'>
                     <img className='card-img-top' src='https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/56757402_2613370595345171_4237995671510056960_o.jpg?_nc_cat=107&_nc_ht=scontent.fcbr2-1.fna&oh=455156462280473eed4786a9c26192c7&oe=5D40A032' alt='Easter special'/>
                     <div className='card-body'>
-                        <h5 className='card-title'><span className='float-left'>Prawn Kotthu Rotti</span>{'//'}29.90(D)</h5>
+                        <h5 className='card-title'><span className='float-left'>Prawn Kotthu Rotti</span>{'//'}31.90(D)</h5>
                         <p className='card-text text-justify'>
                             A classic! A favourite around this time of the year. Strips of thin rotti tossed with assorted strips of vegetables and Sri Lankan spiced induced seafood gravy. Served with gently cooked King Prawns
                         </p>
@@ -50,7 +50,7 @@ const Festive = props => {
                 <div className='card'>
                     <img className='card-img-top' src='https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/57583135_2613370602011837_1487313940147863552_o.jpg?_nc_cat=100&_nc_ht=scontent.fcbr2-1.fna&oh=c355ff1817e4ba1f890b72b3d7eb4ac4&oe=5D2F2D3B' alt='Easter special'/>
                     <div className='card-body'>
-                        <h5 className='card-title'><span className='float-left'>Seafood Mix Grill</span>{'//'}31.90(D)(G)</h5>
+                        <h5 className='card-title'><span className='float-left'>Seafood Mix Grill</span>{'//'}32.90(D)(G)</h5>
                         <p className='card-text text-justify'>
                             Sri Lankan alternative. Tossed Squids, Fish, Prawns, Scallops, Spanish onions and colour capsicum in a tropical sauce.
                             Served with steamed Basmati rice
