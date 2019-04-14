@@ -11,7 +11,7 @@ import {Alert} from 'react-bootstrap';
 const EasterSpecial = ( props ) => {
     return (
         <Alert   id='easter-alert' variant='dark'>
-            We are open Easter including Sunday for your Easter weekend craving!<strong><Link to='/menu/festive'>More Information</Link></strong>
+            We are open Easter including Sunday for your Easter weekend craving!<strong><Link to='/menu/festive'>{' '}More Information</Link></strong>
         </Alert>
     )
 }
