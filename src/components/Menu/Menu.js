@@ -11,6 +11,7 @@ import Loading from '../Loading/Loading';
 import DinnerMenuItems from '../Common/MenuItems/DinnerMenuItems';
 import Beverage from '../Common/MenuItems/Beverage/Beverage';
 import Festive from '../Common/MenuItems/Festive/Festive';
+import TakeAway from '../TakeAway/TakeAway';
 
 class Menu extends Component {
     componentDidMount() {
@@ -25,6 +26,7 @@ class Menu extends Component {
                     <Switch>
                         <Route path='/menu/lunch' component={() => this.props.lunch && this.props.lunch.isLoading ? <Loading/> : <LunchMenuItems category={this.props.lunch && this.props.lunch.lunchMenu && this.props.lunch.lunchMenu[0]}/>}/>
                         <Route path='/menu/dinner' component={() => this.props.dinner && this.props.dinner.isLoading ? <Loading/> : <DinnerMenuItems category={this.props.dinner && this.props.dinner.dinnerMenu && this.props.dinner.dinnerMenu[0]}  />}/>
+                        <Route path='/menu/take-away' component={() => <TakeAway/> }/>
                         <Route path='/menu/beverage' component={() =><Beverage/>}/>
                         <Route path='/menu/festive' component={()=><Festive/>}/>
                     </Switch>
@@ -38,13 +40,14 @@ class Menu extends Component {
 const mapStateToProps = (state) => {
     return {
         lunch: state.lunch,
-        dinner: state.dinner
+        dinner: state.dinner,
+
     }
 };
 const mapDispatchToProps = dispatch => {
     return {
         fetchDinnerMenu: () => dispatch(_.fetchDinnerMenu()),
-        fetchLunchMenu: () => dispatch(_.fetchLunchMenu())
+        fetchLunchMenu: () => dispatch(_.fetchLunchMenu()),
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

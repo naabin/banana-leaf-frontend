@@ -27,6 +27,22 @@ export const GET_ENQUIRY_RESPONSE = "GET_ENQUIRY_RESPONSE";
 export const ENQUIRY_FAILED = "ENQUIRY_FAILED";
 
 
+export const GET_BOX_MEAL = "GET_BOX_MEAL";
+export const BOX_MEAL_LOADING = "BOX_MEAL_LOADING";
+export const BOX_MEAL_FAILED = "BOX_MEAL_FAILED";
+
+
+export const GET_CURRIES = "GET_CURRIES";
+export const CURRIES_LOADING = "CURRIES_LOADING";
+export const CURRIES_FAILED = "CURRIES_FAILED";
+
+
+export const GET_SIDES  = "GET_SIDES";
+export const SIDES_LOADING = "SIDES_LOADING";
+export const SIDES_FAILED = "SIDES_FAILED";
+
+
+
 
 
 

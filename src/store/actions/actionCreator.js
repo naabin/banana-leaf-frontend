@@ -295,3 +295,131 @@ export const fetchEnquiry = (name, email, phone, message) => dispatch => {
     .then(enquiry => dispatch(getEnquiryResponse(enquiry)))
     .catch(error => dispatch(enquiryFailed(error)))
 }
+
+// Box Meal
+
+export const boxMealLoading = () => {
+    return {
+        type: _.BOX_MEAL_LOADING
+    }
+}
+export const getBoxMeal = boxMeal => {
+    return {
+        type: _.GET_BOX_MEAL,
+        payload: boxMeal
+    }
+}
+export const boxMealFailed = error => {
+    return {
+        type: _.BOX_MEAL_FAILED,
+        payload: error
+    }
+}
+
+export const fetchBoxMeal = () => dispatch => {
+    dispatch(boxMealLoading());
+    return fetch(basUrl + 'box-meal')
+        .then(response => {
+            if(response.ok){
+                return response;
+            }
+            else {
+                var error = new Error(`Error ${response.status}\n ${response.statusText}`)
+                error.message = response;
+                throw error;
+            }
+        }, err => {
+            var error = new Error(err);
+            throw error;
+        })
+        .then(response => response.json())
+        .then(boxMeal => dispatch(getBoxMeal(boxMeal)))
+        .catch(error => dispatch(boxMealFailed(error)))
+}
+
+//Curries 
+
+export const curriesLoading = () => {
+    return {
+        type: _.CURRIES_LOADING
+    }
+}
+
+export const getCurries = curries => {
+    return {
+        type: _.GET_CURRIES,
+        payload: curries
+    }
+}
+
+export const curriesFailed = error => {
+    return {
+        type: _.CURRIES_FAILED,
+    }
+}
+
+
+export const fetchCurries = () => dispatch => {
+    dispatch(curriesLoading());
+    return fetch(basUrl + 'curries')
+        .then(response => {
+            if(response.ok){
+                return response;
+            }
+            else {
+                var error = new Error(`Error ${response.status}\n ${response.statusText}`)
+                error.message = response;
+                throw error;
+            }
+        },err => {
+            var error = new Error(err);
+            throw error;
+        })
+        .then(response => response.json())
+        .then(curries => dispatch(getCurries(curries)))
+        .catch(error => dispatch(curriesFailed(error)))
+}
+
+//SIDES 
+
+export const sidesLoading = () => {
+    return{
+        type: _.SIDES_LOADING
+    }
+}
+
+export const getSides = sides => {
+    return {
+        type: _.GET_SIDES,
+        payload: sides
+    }
+}
+
+export const sidesFailed = error => {
+    return {
+        type: _.SIDES_FAILED,
+        payload: error
+    }
+}
+
+export const fetchSides = () => dispatch => {
+    dispatch(sidesFailed());
+    return fetch(basUrl + "sides")
+        .then(response => {
+            if(response.ok){
+                return response;
+
+            }
+            else {
+                var error = new Error( `Error ${response.status}\n ${response.statusText}`);
+                error.message = response;
+                throw error;
+            }
+        }, err => {
+            var error = new Error(err);
+            throw error;
+        })
+        .then(response => response.json())
+        .then(sides => dispatch(getSides(sides)))
+        .catch(error => dispatch(sidesFailed(error)))
+}

@@ -13,11 +13,15 @@ import {lunch} from './store/reducers/lunch'
 import {dinner} from './store/reducers/dinner'
 import {reservation} from "./store/reducers/reservation";
 import {subs} from './store/reducers/subscribers';
-import {enquiry} from './store/reducers/enquiry'
+import {enquiry} from './store/reducers/enquiry';
+import { boxMeal } from './store/reducers/boxMeal';
+import { curries } from './store/reducers/curries';
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { sides } from './store/reducers/sides';
+
 
 
 const composeEnhancers =
@@ -31,6 +35,9 @@ const rootReducer = combineReducers({
     images: images,
     lunch: lunch,
     dinner: dinner,
+    takeAway: boxMeal,
+    takeAwayCurries: curries,
+    sides: sides,
     booking: reservation,
     subs: subs,
     enquiry: enquiry
