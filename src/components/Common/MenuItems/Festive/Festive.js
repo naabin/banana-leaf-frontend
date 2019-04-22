@@ -6,7 +6,10 @@ import './Festive.css'
 const Festive = props => {
     return(
         <>
-        <div className='col-sm-12 col-md-8  p-2'>
+        <div className='container text-center p-3'>
+            <h3>Menu will be updated during festive ocassions.</h3>
+        </div>
+        {/* <div className='col-sm-12 col-md-8  p-2'>
             <div className='container' id='festive'>
             <h3 className='text-center m-1'>Easter holiday trading hours</h3>
             <table className='table table-sm justify-content-center'>
@@ -30,8 +33,8 @@ const Festive = props => {
                 </tbody>
             </table>
             </div>
-        </div> 
-        <div>
+        </div>  */}
+        {/* <div>
             <h1 className='text-center'>Easter specials</h1>
         </div>
         <div className='row'>
@@ -70,7 +73,7 @@ const Festive = props => {
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>  */}
         </>
     )
 }

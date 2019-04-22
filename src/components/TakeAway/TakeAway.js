@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import * as _ from '../../store/actions/actionCreator';
 
-import { Link } from 'react-router-dom';
-
 import { connect } from 'react-redux';
 
 import { Collapse, Button, Jumbotron, Container } from 'react-bootstrap';
@@ -34,12 +32,12 @@ class TakeAway extends Component {
                                     <hr />
                                     LUNCH 11:30AM – 2:00PM & DINNER 5:30PM – 9:00PM<br />
                                     <br />
-                                    FREE DESSERT OVER $50 SPENDING <br />
-                                    FREE DESSERT & SNACK OVER $100 SPENDING <br />
+                                    FREE DESSERT OVER $50 <br />
+                                    FREE DESSERT & SNACK OVER $100 <br />
                                 </h1>
-                                <button className='btn btn-success bg-white btn-lg p-2 m-2'> <Link style={{ color: 'black', textDecoration: 'none' }} to='/contact'>Contact details</Link> </button>
+                                
                             </div>
-                            <p className='float-right'>*Online ordering coming soon.</p>
+                            
                         </Container>
                     </Jumbotron>
                     <div className='p-2'>
