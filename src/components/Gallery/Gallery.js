@@ -59,8 +59,7 @@ class Gallery extends Component {
         }
         const { isOpen } = this.state;
         let cardImage = null;
-        // const url = window.location.href;
-        // const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        // const facebookUrl = `https://www.facebook.com/sharer/sharer.php?`;
         cardImage = (
             <>
                 <div className={'row d-flex d-flex justify-content-center'}>
@@ -73,8 +72,8 @@ class Gallery extends Component {
                                             this.pkAndIsOpenHandler(index, image.pk, image.title);
                                             this.props.show();
                                         }} id={'cardImage'} src={image.image} title={image.title} alt="" />
-                                        {/* <a id='image-text' className="btn btn-default btn-block" href={facebookUrl} rel="noopener noreferrer" target="_blank"> <i className="fa fa-facebook-square"></i></a> */}
-                                        {/* <h3 id="image-text" className="text-center">{image.title}</h3> */}
+                                        {/* <a id='image-text' className="btn btn-default" href={`${facebookUrl}u=${window.location.href}/${image.pk}/${image.title}`} rel="noopener noreferrer"  target='_blank'><i className="fa fa-share-square"></i></a>  */}
+                                        {/* {/* <h3 id="image-text" className="text-center">{image.title}</h3> */}
                                         
                                     </div>
                                 </div>
