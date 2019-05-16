@@ -43,27 +43,27 @@ class OpeningHours extends Component {
                 <tbody>
                     <tr className={this.state.weekday[this.state.now.getDay()] === 'Monday' ? 'bg-dark  text-white' : null}>
                         <td>Monday</td>
-                        <td>6-9pm</td>
+                        <td>5-9pm</td>
                     </tr>
                     <tr className={this.state.weekday[this.state.now.getDay()] === 'Tuesday' ? 'bg-dark text-white' : null}>
                         <td>Tuesday</td>
-                        <td>6-9pm</td>
+                        <td>5-9pm</td>
                     </tr>
                     <tr className={this.state.weekday[this.state.now.getDay()] === 'Wednesday' ? 'bg-dark text-white' : null} >
                         <td>Wednesday</td>
-                        <td>12-2pm, 6-9pm</td>
+                        <td>12-2pm, 5-9pm</td>
                     </tr>
                     <tr className={this.state.weekday[this.state.now.getDay()] === 'Thursday' ? 'bg-dark text-white' : null} >
                         <td>Thursday</td>
-                        <td>12-2pm, 6-9pm</td>
+                        <td>12-2pm, 5-9pm</td>
                     </tr>
                     <tr className={this.state.weekday[this.state.now.getDay()] === 'Friday' ? 'bg-dark text-white' : null} >
                         <td>Friday</td>
-                        <td>12-2pm, 6-9pm</td>
+                        <td>12-2pm, 5-9pm</td>
                     </tr>
                     <tr className={this.state.weekday[this.state.now.getDay()] === 'Saturday' ? 'bg-dark text-white' : null} >
                         <td>Saturday</td>
-                        <td>12-2pm, 6-9pm</td>
+                        <td>12-2pm, 5-9pm</td>
                     </tr>
                     <tr className={this.state.weekday[this.state.now.getDay()] === 'Sunday' ? 'bg-dark text-white' : null} >
                         <td>Sunday</td>
