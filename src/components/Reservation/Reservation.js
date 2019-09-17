@@ -59,6 +59,7 @@ class Reservation extends Component {
         this.setState({
             date: date
         })
+        console.log(date.getMonth());
     };
     handleTimeChange = (time) => {
         this.setState({time: time});
@@ -66,7 +67,8 @@ class Reservation extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.nextStep(e);
-        var date = `${this.state.date.getFullYear()}-${this.state.date.getMonth().toString().length === 1 ?'0'+(this.state.date.getMonth()+1 ).toString() : this.state.date.getMonth().toString()}-${this.state.date.getDate()}`
+        var month = (this.state.date.getMonth() + 1).toString();
+        var date = `${this.state.date.getFullYear()}-${month.length === 1 ? '0'+ month : month}-${this.state.date.getDate()}`
         var time = `${this.state.time.getHours()}:${this.state.time.getMinutes()}`
         this.props.postBooking(this.state.name, this.state.email, this.state.phone, date, time, this.state.num_of_guests, this.state.special_request, this.state.confirmed);
     };
@@ -209,8 +211,9 @@ class Reservation extends Component {
             </div>  
             break;
             case 2 :
+                let month = (this.state.date.getMonth() + 1).toString();
                 let chosenDate = this.state.date.getDate().toString().length === 1 ?'0'+this.state.date.getDate().toString() : this.state.date.getDate();
-                let chosenMonth = this.state.date.getMonth().toString().length === 1 ? '0'+(this.state.date.getMonth() + 1).toString() : this.state.date.getMonth().toString();
+                let chosenMonth = month.length === 1 ? '0'+ month : month;
                 form = <ReservationSummary 
                         
                             nextStep = {this.nextStep}
@@ -230,8 +233,9 @@ class Reservation extends Component {
                         break;
             case 3 :
                 if(this.props.modal.isLoading) {
+                    let month = (this.state.date.getMonth() + 1).toString();
                     let chosenDate = this.state.date.getDate().toString().length === 1 ?'0'+this.state.date.getDate().toString() : this.state.date.getDate();
-                    let chosenMonth = this.state.date.getMonth().toString().length === 1 ? '0'+(this.state.date.getMonth() + 1).toString() : this.state.date.getMonth().toString();
+                    let chosenMonth = month.length === 1 ? '0'+ month : month;
                     form= <ReservationSummary
                             
                             isLoading = {this.props.modal.isLoading}
