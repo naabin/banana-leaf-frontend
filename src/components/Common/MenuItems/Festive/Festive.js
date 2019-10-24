@@ -2,78 +2,56 @@ import React from 'react'
 
 import './Festive.css'
 
+import DieteryIcon from '../../DieteryIcon/DieteryIcon.js'
+
 
 const Festive = props => {
     return(
         <>
         <div className='container text-center p-3'>
-            <h3>Menu will be updated during festive ocassions.</h3>
+            <h3>MERRY CHRISTMAS 2019</h3>
+            <h5>Three Course & Dessert <br/> Lunch 11.30 am to 2.30 pm</h5>
         </div>
-        {/* <div className='col-sm-12 col-md-8  p-2'>
-            <div className='container' id='festive'>
-            <h3 className='text-center m-1'>Easter holiday trading hours</h3>
-            <table className='table table-sm justify-content-center'>
-                <tbody>
-                    <tr >
-                        <td>Friday(Good Friday)</td>
-                        <td>12-2pm, 6-9pm</td>
-                    </tr>
-                    <tr  >
-                        <td>Saturday</td>
-                        <td>12-2pm, 6-9pm</td>
-                    </tr>
-                    <tr>
-                        <td>Sunday(Easter Sunday)</td>
-                        <td>6-9pm</td>
-                    </tr>
-                    <tr>
-                        <td>Monday(Easter Monday)</td>
-                        <td>6-9pm</td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-        </div>  */}
-        {/* <div>
-            <h1 className='text-center'>Easter specials</h1>
+         <div>
+            <h5 className='text-center'>Trio of Seafood <DieteryIcon glutenFree={true} dairyFree={true}></DieteryIcon></h5>
+            <p className="text-center">Grilled scallops, prawns & smoked salmon served with Sri Lankan spiced tamarind sauce</p>
+
+            <h5 className='text-center'>Turkey Pan Roll</h5>
+            <p className="text-center">
+            Sri Lankan mildly curried minced Turkey and potato rolled in a crepe,crumbed and lightly <br/> fried drizzled with cranberries & mango coulis
+            </p>
+            <hr/>
+            <h5 className='text-center'>Lamb Biriyani <DieteryIcon glutenFree={true}></DieteryIcon></h5>
+            <p className="text-center">
+            Traditional Biriyani with savoury rice and diced lamb.<br/> Cooked with cashew nuts, Sultanas and Fried Onions.<br/> Served with Pappadams and cucumber raita.
+            </p>
+            <h5 className='text-center'>Barramundi <DieteryIcon glutenFree={true}> </DieteryIcon></h5>
+            <p className="text-center">
+            Pan grilled Barramundi dusted with mild Sri Lankan spices. Served with Sweet Potato mash.
+            </p>
+            <h5 className="text-center">Spiced Chicken <DieteryIcon glutenFree={true} dairyFree={true} /></h5>
+            <p className="text-center">
+            Sri Lankan spices marinated chicken breast placed on Turmeric and Paprika coated potatoes.<br/> Drizzled with mild devil Sauce.
+            </p>
+            <h5 className="text-center">Pork Belly <DieteryIcon glutenFree={true}/></h5>
+            <p className="text-center">
+            Chilli and honey glazed, crispy skin slow cooked poke belly comes with grilled button <br/> squash, Brussels sprouts, Broccolini, Pumpkin puree, Poached apple and rhubarb compote.
+            </p>
+            <hr/>
+            <h5 className="text-center">Sri Lankan Wood Apple Mousse <DieteryIcon glutenFree={true}/></h5>
+            <p className="text-center">A light sweet & tangy mousse made with Sri Lanka wood apple puree</p>
+            <h6 className="text-center">Or</h6>
+            <h5 className="text-center">Date and Cashew Cake</h5>
+            <p className="text-center">Light & fluffy cake serve with custard & caramel sauce</p>
+            <h6 className="text-center">Or</h6>
+            <h5 className="text-center">Nutella and Ricotta Tart</h5>
+            <p className="text-center">Serve with fresh berries & whipped cream</p>
+            <h5 className="text-center">Adults $95 PP (Kids under 12) $ 35 Kids Menu</h5>
+            <h6 className="text-center"> <i>NO BYO<br/>
+                Please notify staff of all allergies<br/>
+                G gluten free D dairy free V vegetarian V vegan *on request</i></h6>
         </div>
-        <div className='row'>
-            <div className='col-sm-12 col-md-4 d-flex align-items-stretch'>
-                <div className='card'>
-                    <img className='card-img-top' src='https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/56757402_2613370595345171_4237995671510056960_o.jpg?_nc_cat=107&_nc_ht=scontent.fcbr2-1.fna&oh=455156462280473eed4786a9c26192c7&oe=5D40A032' alt='Easter special'/>
-                    <div className='card-body'>
-                        <h5 className='card-title'><span className='float-left'>Prawn Kotthu Rotti</span>{'//'}31.90(D)</h5>
-                        <p className='card-text text-justify'>
-                            A classic! A favourite around this time of the year. Strips of thin rotti tossed with assorted strips of vegetables and Sri Lankan spiced induced seafood gravy. Served with gently cooked King Prawns
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className='col-sm-12 col-md-4 d-flex align-items-stretch '>
-                <div className='card'>
-                    <img className='card-img-top' src='https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/57583135_2613370602011837_1487313940147863552_o.jpg?_nc_cat=100&_nc_ht=scontent.fcbr2-1.fna&oh=c355ff1817e4ba1f890b72b3d7eb4ac4&oe=5D2F2D3B' alt='Easter special'/>
-                    <div className='card-body'>
-                        <h5 className='card-title'><span className='float-left'>Seafood Mix Grill</span>{'//'}32.90(D)(G)</h5>
-                        <p className='card-text text-justify'>
-                            Sri Lankan alternative. Tossed Squids, Fish, Prawns, Scallops, Spanish onions and colour capsicum in a tropical sauce.
-                            Served with steamed Basmati rice
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className='col-sm-12 col-md-4 d-flex align-items-stretch '>
-                <div className='card'>
-                    <img className='card-img-top' src='https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/56850388_2613370612011836_2973191024756654080_o.jpg?_nc_cat=102&_nc_ht=scontent.fcbr2-1.fna&oh=e727b5f3483ed23ac1c5a38df2676569&oe=5D3DABA3' alt='Easter special'/>
-                    <div className='card-body'>
-                        <h5 className='card-title'><span className='float-left'>Tasmanian Salmon</span>{'//'}33.90(D)(G)</h5>
-                        <p className='card-text text-justify'>
-                        Grilled to perfection an all-time favourite
-                        Served with assorted seasonal vegetables and topped with a mild chilli mango sauce.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>  */}
+        
         </>
     )
 }
