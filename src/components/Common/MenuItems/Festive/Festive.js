@@ -10,7 +10,7 @@ const Festive = props => {
         <>
         <div className='container text-center p-3'>
             <h3>MERRY CHRISTMAS 2019</h3>
-            <h5>Three Course & Dessert <br/> Lunch 11.30 am to 2.30 pm</h5>
+            <h5>Three course choice A La'Carte<br/> Lunch 11.30 am to 2.30 pm</h5>
         </div>
          <div>
             <h5 className='text-center'>Trio of Seafood <DieteryIcon glutenFree={true} dairyFree={true}></DieteryIcon></h5>
