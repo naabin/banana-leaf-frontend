@@ -1,1 +1,1 @@
-export const basUrl = 'https://api.bananaleafrestaurant.com.au/api/';
+export const basUrl = 'https://api.bananaleafcanberra.com.au/api/';
